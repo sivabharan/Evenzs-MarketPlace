@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dsznajder.es7-react-js-snippets",
+    "pmneo.tsimporter",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-typescript-next",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-json",
+    "eamodio.gitlens"
+  ]
+}
