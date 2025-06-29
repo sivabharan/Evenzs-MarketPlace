@@ -16,6 +16,7 @@ import {
   Ticket,
   Search
 } from 'lucide-react';
+import { Logo } from '../components/Logo';
 
 export const Home: React.FC = () => {
   return (
@@ -26,6 +27,9 @@ export const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
+              <div className="mb-8">
+                <Logo size="lg" variant="white" animated={true} />
+              </div>
               <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                 Make Every Event
                 <span className="text-accent block animate-pulse-slow">Unforgettable</span>

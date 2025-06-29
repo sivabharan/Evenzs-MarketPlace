@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
   return (
@@ -9,17 +10,9 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-light rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">E</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  evenzs
-                </span>
-                <span className="text-xs text-gray-400 -mt-1">events made easy</span>
-              </div>
-            </Link>
+            <div className="mb-6">
+              <Logo size="sm" variant="white" animated={true} />
+            </div>
             <p className="text-gray-400 text-lg mb-6 max-w-md">
               Making unforgettable events effortless. Connect with top vendors, plan seamlessly, and celebrate in style.
             </p>

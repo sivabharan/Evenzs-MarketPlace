@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Calendar, Bell, User, Menu, LogOut, Settings, ChevronDown, Ticket, Users } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { Logo } from './Logo';
 
 export const Header: React.FC = () => {
   const location = useLocation();
@@ -27,20 +28,8 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              {/* Updated logo to match evenzs.com style */}
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-light rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                <span className="text-white font-bold text-lg">E</span>
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-light bg-clip-text text-transparent">
-                evenzs
-              </span>
-              <span className="text-xs text-slate-light -mt-1">events made easy</span>
-            </div>
+          <Link to="/" className="group">
+            <Logo size="sm" animated={true} />
           </Link>
 
           {/* Navigation */}
