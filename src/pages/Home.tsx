@@ -16,7 +16,6 @@ import {
   Ticket,
   Search
 } from 'lucide-react';
-import { Logo } from '../components/Logo';
 
 export const Home: React.FC = () => {
   return (
@@ -27,9 +26,6 @@ export const Home: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
-              <div className="mb-8">
-                <Logo size="lg" variant="white" animated={true} />
-              </div>
               <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                 Make Every Event
                 <span className="text-primary block animate-pulse-slow">Unforgettable</span>
@@ -91,7 +87,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
-              Why Choose <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">evenzs</span>?
+              Why Choose <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Platform</span>?
             </h2>
             <p className="text-xl text-charcoal max-w-3xl mx-auto">
               We make event planning and discovery effortless with our intelligent platform, 
@@ -170,7 +166,7 @@ export const Home: React.FC = () => {
             Ready for Your Next Event?
           </h2>
           <p className="text-xl text-charcoal mb-10">
-            Join thousands of happy customers who trust evenzs for their special moments.
+            Join thousands of happy customers who trust us for their special moments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
