@@ -36,35 +36,35 @@ export const Header: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-8">
             {!isDashboard && !isAuthenticated && (
               <>
-                <Link to="/event-discovery" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/event-discovery" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Discover Events
                 </Link>
-                <Link to="/vendor-discovery" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/vendor-discovery" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Find Vendors
                 </Link>
-                <Link to="/travel" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/travel" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Travel
                 </Link>
-                <Link to="/create-event" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/create-event" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Plan Event
                 </Link>
               </>
             )}
             {isAuthenticated && !isDashboard && (
               <>
-                <Link to="/event-discovery" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/event-discovery" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Discover Events
                 </Link>
-                <Link to="/vendor-discovery" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/vendor-discovery" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Find Vendors
                 </Link>
-                <Link to="/travel" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/travel" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Travel
                 </Link>
-                <Link to="/create-event" className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to="/create-event" className="text-charcoal hover:text-primary transition-colors font-medium">
                   Plan Event
                 </Link>
-                <Link to={getUserDashboard()} className="text-slate-light hover:text-primary transition-colors font-medium">
+                <Link to={getUserDashboard()} className="text-charcoal hover:text-primary transition-colors font-medium">
                   Dashboard
                 </Link>
               </>
@@ -74,9 +74,9 @@ export const Header: React.FC = () => {
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             {isDashboard && isAuthenticated && (
-              <button className="relative p-2 text-slate-light hover:text-primary transition-colors">
+              <button className="relative p-2 text-charcoal hover:text-primary transition-colors">
                 <Bell size={20} />
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-xs rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center">
                   3
                 </span>
               </button>
@@ -86,14 +86,14 @@ export const Header: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Link 
                   to="/event-discovery"
-                  className="flex items-center space-x-2 text-slate-light hover:text-primary px-4 py-2 rounded-full transition-colors"
+                  className="flex items-center space-x-2 text-charcoal hover:text-primary px-4 py-2 rounded-full transition-colors"
                 >
                   <Ticket size={18} />
                   <span className="font-medium">Buy Tickets</span>
                 </Link>
                 <Link 
                   to="/signin" 
-                  className="flex items-center space-x-2 bg-gradient-to-r from-primary to-indigo-light hover:from-indigo-dark hover:to-primary text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl animate-gold-glow"
                 >
                   <User size={18} />
                   <span className="font-medium">Sign In</span>
@@ -112,9 +112,9 @@ export const Header: React.FC = () => {
                   />
                   <div className="hidden md:block text-left">
                     <div className="text-sm font-medium text-secondary">{user.name}</div>
-                    <div className="text-xs text-slate-light capitalize">{user.role}</div>
+                    <div className="text-xs text-charcoal capitalize">{user.role}</div>
                   </div>
-                  <ChevronDown className={`w-4 h-4 text-slate-light transition-transform ${showUserMenu ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-charcoal transition-transform ${showUserMenu ? 'rotate-180' : ''}`} />
                 </button>
 
                 {/* User Menu Dropdown */}
@@ -129,7 +129,7 @@ export const Header: React.FC = () => {
                         />
                         <div>
                           <div className="font-medium text-secondary">{user.name}</div>
-                          <div className="text-sm text-slate-light">{user.email}</div>
+                          <div className="text-sm text-charcoal">{user.email}</div>
                           <div className="text-xs text-primary capitalize font-medium">{user.role}</div>
                         </div>
                       </div>
@@ -139,7 +139,7 @@ export const Header: React.FC = () => {
                       <Link
                         to={getUserDashboard()}
                         onClick={() => setShowUserMenu(false)}
-                        className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
+                        className="flex items-center px-4 py-2 text-charcoal hover:bg-pearl transition-colors"
                       >
                         <User className="w-4 h-4 mr-3" />
                         Dashboard
@@ -151,7 +151,7 @@ export const Header: React.FC = () => {
                           <Link
                             to="/customer-dashboard"
                             onClick={() => setShowUserMenu(false)}
-                            className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
+                            className="flex items-center px-4 py-2 text-charcoal hover:bg-pearl transition-colors"
                           >
                             <Ticket className="w-4 h-4 mr-3" />
                             My Tickets
@@ -159,7 +159,7 @@ export const Header: React.FC = () => {
                           <Link
                             to="/event-discovery"
                             onClick={() => setShowUserMenu(false)}
-                            className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
+                            className="flex items-center px-4 py-2 text-charcoal hover:bg-pearl transition-colors"
                           >
                             <Calendar className="w-4 h-4 mr-3" />
                             Find Events
@@ -171,7 +171,7 @@ export const Header: React.FC = () => {
                         <Link
                           to="/vendor-profile"
                           onClick={() => setShowUserMenu(false)}
-                          className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
+                          className="flex items-center px-4 py-2 text-charcoal hover:bg-pearl transition-colors"
                         >
                           <Settings className="w-4 h-4 mr-3" />
                           Profile Settings
@@ -191,7 +191,7 @@ export const Header: React.FC = () => {
               </div>
             )}
 
-            <button className="md:hidden p-2 text-slate-light hover:text-primary transition-colors">
+            <button className="md:hidden p-2 text-charcoal hover:text-primary transition-colors">
               <Menu size={24} />
             </button>
           </div>

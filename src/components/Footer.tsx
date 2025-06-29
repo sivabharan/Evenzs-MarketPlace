@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-charcoal rounded-full hover:bg-primary transition-colors"
               >
                 <Instagram size={20} />
               </a>
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-charcoal rounded-full hover:bg-primary transition-colors"
               >
                 <Twitter size={20} />
               </a>
@@ -37,13 +37,13 @@ export const Footer: React.FC = () => {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-charcoal rounded-full hover:bg-primary transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a 
                 href="mailto:hello@evenzs.com"
-                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-charcoal rounded-full hover:bg-primary transition-colors"
               >
                 <Mail size={20} />
               </a>
@@ -52,25 +52,25 @@ export const Footer: React.FC = () => {
 
           {/* For Event Attendees */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">For Event Attendees</h3>
+            <h3 className="font-semibold text-lg mb-4 text-primary">For Event Attendees</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <Link to="/event-discovery" className="hover:text-white transition-colors">
+                <Link to="/event-discovery" className="hover:text-primary transition-colors">
                   Discover Events
                 </Link>
               </li>
               <li>
-                <Link to="/customer-dashboard" className="hover:text-white transition-colors">
+                <Link to="/customer-dashboard" className="hover:text-primary transition-colors">
                   My Tickets
                 </Link>
               </li>
               <li>
-                <Link to="/travel-planning" className="hover:text-white transition-colors">
+                <Link to="/travel-planning" className="hover:text-primary transition-colors">
                   Travel Planning
                 </Link>
               </li>
               <li>
-                <Link to="/support" className="hover:text-white transition-colors">
+                <Link to="/support" className="hover:text-primary transition-colors">
                   Event Support
                 </Link>
               </li>
@@ -79,15 +79,15 @@ export const Footer: React.FC = () => {
 
           {/* For Event Professionals */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">For Event Professionals</h3>
+            <h3 className="font-semibold text-lg mb-4 text-primary">For Event Professionals</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <Link to="/create-event" className="hover:text-white transition-colors">
+                <Link to="/create-event" className="hover:text-primary transition-colors">
                   Plan Events
                 </Link>
               </li>
               <li>
-                <Link to="/vendor-discovery" className="hover:text-white transition-colors">
+                <Link to="/vendor-discovery" className="hover:text-primary transition-colors">
                   Find Vendors
                 </Link>
               </li>
@@ -95,13 +95,13 @@ export const Footer: React.FC = () => {
                 <Link 
                   to="/signin" 
                   state={{ role: 'vendor' }}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Join as Vendor
                 </Link>
               </li>
               <li>
-                <Link to="/package-builder" className="hover:text-white transition-colors">
+                <Link to="/package-builder" className="hover:text-primary transition-colors">
                   Event Packages
                 </Link>
               </li>
@@ -109,7 +109,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-dark mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-charcoal mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
             <p className="text-gray-400">© 2024 evenzs. All rights reserved.</p>
             <a 
@@ -126,13 +126,13 @@ export const Footer: React.FC = () => {
             </a>
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/privacy" className="text-gray-400 hover:text-primary transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/terms" className="text-gray-400 hover:text-primary transition-colors">
               Terms of Service
             </Link>
-            <Link to="/support" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/support" className="text-gray-400 hover:text-primary transition-colors">
               Support
             </Link>
           </div>

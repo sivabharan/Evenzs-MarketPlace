@@ -4,30 +4,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Professional & Elegant Party Color Palette
-        primary: '#6366F1',        // Sophisticated Indigo
-        secondary: '#1E293B',      // Deep Slate (Professional)
-        accent: '#F59E0B',         // Warm Amber (Celebration)
-        background: '#FAFAFA',     // Clean Light Gray
+        // Gold & Dark Grey Elegant Party Color Palette
+        primary: '#D4AF37',        // Rich Gold (Main brand)
+        secondary: '#1A1A1A',      // Deep Charcoal (Professional)
+        accent: '#F7D794',         // Champagne Gold (Celebration)
+        background: '#FAFAF9',     // Warm Off-White
         
-        // Extended palette for depth and sophistication
-        'indigo-light': '#818CF8',
-        'indigo-dark': '#4338CA',
-        'slate-light': '#475569',
-        'slate-dark': '#0F172A',
-        'amber-light': '#FCD34D',
-        'amber-dark': '#D97706',
+        // Extended gold palette
+        'gold-light': '#F4E4BC',   // Light Champagne
+        'gold-dark': '#B8860B',    // Dark Goldenrod
+        'gold-elegant': '#DAA520', // Goldenrod
+        'champagne': '#F7E7CE',    // Soft Champagne
+        
+        // Extended dark grey palette
+        'charcoal': '#2D2D2D',     // Medium Charcoal
+        'charcoal-light': '#404040', // Light Charcoal
+        'charcoal-dark': '#0D0D0D', // Almost Black
+        'slate-warm': '#3A3A3A',   // Warm Slate
         
         // Elegant party accents
-        'rose-elegant': '#F43F5E',     // Sophisticated Rose
-        'emerald-elegant': '#10B981',  // Refined Emerald
-        'violet-elegant': '#8B5CF6',   // Luxurious Violet
-        'gold-elegant': '#EAB308',     // Premium Gold
+        'rose-gold': '#E8B4B8',    // Rose Gold
+        'bronze': '#CD7F32',       // Bronze
+        'copper': '#B87333',       // Copper
+        'platinum': '#E5E4E2',     // Platinum
         
         // Neutral sophistication
-        'pearl': '#F8FAFC',
-        'charcoal': '#374151',
-        'platinum': '#E5E7EB',
+        'pearl': '#F8F6F0',        // Warm Pearl
+        'ivory': '#FFFFF0',        // Ivory
+        'cream': '#F5F5DC',        // Cream
+        'smoke': '#F5F5F5',        // Light Smoke
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -41,6 +46,7 @@ export default {
         'celebration': 'celebration 8s ease-in-out infinite',
         'elegant-float': 'elegant-float 5s ease-in-out infinite',
         'shimmer': 'shimmer 2s ease-in-out infinite',
+        'gold-glow': 'gold-glow 3s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -71,6 +77,10 @@ export default {
         shimmer: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
+        },
+        'gold-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.5)' },
         },
       },
     },
