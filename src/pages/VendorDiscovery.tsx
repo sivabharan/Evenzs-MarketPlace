@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Search, 
   MapPin, 
@@ -128,39 +129,39 @@ export const VendorDiscovery: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-secondary mb-4">
             Discover Amazing Vendors
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-charcoal max-w-3xl mx-auto">
             Browse our curated network of top-rated event professionals, ready to make your event extraordinary.
           </p>
         </div>
 
         {/* Search & Filters */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 mb-8">
+        <div className="bg-white rounded-2xl shadow-lg border border-platinum p-6 mb-8">
           <div className="flex flex-col lg:flex-row gap-4">
             {/* Search */}
             <div className="flex-1 relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-charcoal w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search vendors, services, or locations..."
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                className="w-full pl-12 pr-4 py-3 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
               />
             </div>
 
             {/* Location */}
             <div className="relative">
-              <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-charcoal w-5 h-5" />
               <input
                 type="text"
                 placeholder="Location"
-                className="w-full lg:w-48 pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                className="w-full lg:w-48 pl-12 pr-4 py-3 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
               />
             </div>
 
             {/* Filters */}
-            <button className="flex items-center justify-center px-6 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors">
+            <button className="flex items-center justify-center px-6 py-3 border border-platinum rounded-xl hover:bg-pearl transition-colors">
               <Filter className="w-5 h-5 mr-2" />
               Filters
             </button>
@@ -177,8 +178,8 @@ export const VendorDiscovery: React.FC = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-primary text-white shadow-lg scale-105'
-                    : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+                    ? 'bg-primary text-secondary shadow-lg scale-105 animate-gold-glow'
+                    : 'bg-white text-charcoal hover:bg-pearl border border-platinum'
                 }`}
               >
                 <IconComponent className="w-5 h-5 mr-2" />
@@ -191,15 +192,15 @@ export const VendorDiscovery: React.FC = () => {
         {/* Results Header */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-secondary">
               {filteredVendors.length} Vendors Found
             </h2>
-            <p className="text-gray-600">
+            <p className="text-charcoal">
               {activeCategory === 'all' ? 'All categories' : categories.find(c => c.id === activeCategory)?.label}
             </p>
           </div>
           <div className="flex items-center space-x-4">
-            <select className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+            <select className="px-4 py-2 border border-platinum rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
               <option>Sort by: Rating</option>
               <option>Sort by: Price (Low to High)</option>
               <option>Sort by: Price (High to Low)</option>
@@ -211,7 +212,7 @@ export const VendorDiscovery: React.FC = () => {
         {/* Vendor Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredVendors.map((vendor) => (
-            <div key={vendor.id} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+            <div key={vendor.id} className="bg-white rounded-2xl shadow-lg border border-platinum overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
               <div className="relative">
                 <img 
                   src={vendor.image} 
@@ -220,48 +221,48 @@ export const VendorDiscovery: React.FC = () => {
                 />
                 {vendor.featured && (
                   <div className="absolute top-4 left-4">
-                    <span className="bg-accent text-white text-xs font-bold px-3 py-1 rounded-full flex items-center">
+                    <span className="bg-accent text-secondary text-xs font-bold px-3 py-1 rounded-full flex items-center">
                       <Award className="w-3 h-3 mr-1" />
                       FEATURED
                     </span>
                   </div>
                 )}
                 <button className="absolute top-4 right-4 p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
-                  <Heart className="w-5 h-5 text-gray-600 hover:text-accent" />
+                  <Heart className="w-5 h-5 text-charcoal hover:text-accent" />
                 </button>
               </div>
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-secondary group-hover:text-primary transition-colors">
                     {vendor.name}
                   </h3>
                   <div className="flex items-center">
                     <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="text-sm font-medium text-gray-900 ml-1">{vendor.rating}</span>
-                    <span className="text-sm text-gray-500 ml-1">({vendor.reviews})</span>
+                    <span className="text-sm font-medium text-secondary ml-1">{vendor.rating}</span>
+                    <span className="text-sm text-charcoal ml-1">({vendor.reviews})</span>
                   </div>
                 </div>
 
-                <div className="flex items-center text-gray-600 mb-3">
+                <div className="flex items-center text-charcoal mb-3">
                   <MapPin className="w-4 h-4 mr-1" />
                   <span className="text-sm">{vendor.location}</span>
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {vendor.specialties.map((specialty) => (
-                    <span key={specialty} className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">
+                    <span key={specialty} className="bg-pearl text-charcoal text-xs px-2 py-1 rounded-full">
                       {specialty}
                     </span>
                   ))}
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
-                  <div className="flex items-center text-gray-600">
+                  <div className="flex items-center text-charcoal">
                     <Clock className="w-4 h-4 mr-1 text-green-500" />
                     <span>Responds in {vendor.responseTime}</span>
                   </div>
-                  <div className="flex items-center text-gray-600">
+                  <div className="flex items-center text-charcoal">
                     <Calendar className="w-4 h-4 mr-1 text-blue-500" />
                     <span>{vendor.bookingRate} booking rate</span>
                   </div>
@@ -269,29 +270,39 @@ export const VendorDiscovery: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-sm text-gray-600">Starting from</span>
+                    <span className="text-sm text-charcoal">Starting from</span>
                     <div className="text-xl font-bold text-primary">
                       ${vendor.startingPrice.toLocaleString()}
-                      {vendor.category === 'catering' && <span className="text-sm text-gray-600">/person</span>}
+                      {vendor.category === 'catering' && <span className="text-sm text-charcoal">/person</span>}
                     </div>
                   </div>
                   <div className="flex space-x-2">
-                    <button className="p-2 text-gray-600 hover:text-primary transition-colors">
+                    <Link
+                      to={`/vendor-profile-view/${vendor.id}`}
+                      className="p-2 text-charcoal hover:text-primary transition-colors"
+                      title="View Profile"
+                    >
                       <Eye className="w-5 h-5" />
-                    </button>
-                    <button className="p-2 text-gray-600 hover:text-primary transition-colors">
+                    </Link>
+                    <button className="p-2 text-charcoal hover:text-primary transition-colors" title="Message">
                       <MessageSquare className="w-5 h-5" />
                     </button>
                   </div>
                 </div>
 
                 <div className="flex gap-2 mt-4">
-                  <button className="flex-1 bg-primary hover:bg-purple-dark text-white py-2 px-4 rounded-lg font-medium transition-colors">
+                  <Link
+                    to={`/vendor-quote/${vendor.id}`}
+                    className="flex-1 bg-primary hover:bg-gold-dark text-secondary py-2 px-4 rounded-lg font-medium transition-colors text-center"
+                  >
                     Get Quote
-                  </button>
-                  <button className="flex-1 border border-primary text-primary hover:bg-primary hover:text-white py-2 px-4 rounded-lg font-medium transition-colors">
+                  </Link>
+                  <Link
+                    to={`/vendor-profile-view/${vendor.id}`}
+                    className="flex-1 border border-primary text-primary hover:bg-primary hover:text-secondary py-2 px-4 rounded-lg font-medium transition-colors text-center"
+                  >
                     View Profile
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -300,7 +311,7 @@ export const VendorDiscovery: React.FC = () => {
 
         {/* Load More */}
         <div className="text-center mt-12">
-          <button className="bg-white hover:bg-gray-50 text-gray-900 px-8 py-3 rounded-xl border border-gray-200 font-medium transition-colors">
+          <button className="bg-white hover:bg-pearl text-secondary px-8 py-3 rounded-xl border border-platinum font-medium transition-colors">
             Load More Vendors
           </button>
         </div>

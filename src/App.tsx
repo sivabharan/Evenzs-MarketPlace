@@ -9,6 +9,8 @@ import { VendorDashboard } from './pages/VendorDashboard';
 import { CreateEvent } from './pages/CreateEvent';
 import { PackageBuilder } from './pages/PackageBuilder';
 import { VendorDiscovery } from './pages/VendorDiscovery';
+import { VendorProfileView } from './pages/VendorProfileView';
+import { VendorQuote } from './pages/VendorQuote';
 import { TravelIntegrations } from './pages/TravelIntegrations';
 import { VendorProfile } from './pages/VendorProfile';
 import { SubmitBid } from './pages/SubmitBid';
@@ -33,6 +35,8 @@ function App() {
             <Route path="/create-event" element={<CreateEvent />} />
             <Route path="/package-builder" element={<PackageBuilder />} />
             <Route path="/vendor-discovery" element={<VendorDiscovery />} />
+            <Route path="/vendor-profile-view/:vendorId" element={<VendorProfileView />} />
+            <Route path="/vendor-quote/:vendorId" element={<VendorQuote />} />
             <Route path="/travel" element={<TravelIntegrations />} />
             <Route path="/vendor-profile" element={<VendorProfile />} />
             <Route path="/submit-bid/:eventId?" element={<SubmitBid />} />
