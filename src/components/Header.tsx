@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-platinum shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
                 </Link>
                 <Link 
                   to="/signin" 
-                  className="flex items-center space-x-2 bg-gradient-to-r from-primary to-purple-light hover:from-purple-dark hover:to-primary text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-primary to-indigo-light hover:from-indigo-dark hover:to-primary text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   <User size={18} />
                   <span className="font-medium">Sign In</span>
@@ -103,7 +103,7 @@ export const Header: React.FC = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center space-x-3 bg-white hover:bg-gray-50 border border-gray-200 px-4 py-2.5 rounded-full transition-all duration-300 hover:shadow-md"
+                  className="flex items-center space-x-3 bg-white hover:bg-pearl border border-platinum px-4 py-2.5 rounded-full transition-all duration-300 hover:shadow-md"
                 >
                   <img
                     src={user.avatar}
@@ -119,8 +119,8 @@ export const Header: React.FC = () => {
 
                 {/* User Menu Dropdown */}
                 {showUserMenu && (
-                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50">
-                    <div className="px-4 py-3 border-b border-gray-100">
+                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-platinum py-2 z-50">
+                    <div className="px-4 py-3 border-b border-platinum">
                       <div className="flex items-center space-x-3">
                         <img
                           src={user.avatar}
@@ -139,7 +139,7 @@ export const Header: React.FC = () => {
                       <Link
                         to={getUserDashboard()}
                         onClick={() => setShowUserMenu(false)}
-                        className="flex items-center px-4 py-2 text-slate-light hover:bg-gray-50 transition-colors"
+                        className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
                       >
                         <User className="w-4 h-4 mr-3" />
                         Dashboard
@@ -151,7 +151,7 @@ export const Header: React.FC = () => {
                           <Link
                             to="/customer-dashboard"
                             onClick={() => setShowUserMenu(false)}
-                            className="flex items-center px-4 py-2 text-slate-light hover:bg-gray-50 transition-colors"
+                            className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
                           >
                             <Ticket className="w-4 h-4 mr-3" />
                             My Tickets
@@ -159,7 +159,7 @@ export const Header: React.FC = () => {
                           <Link
                             to="/event-discovery"
                             onClick={() => setShowUserMenu(false)}
-                            className="flex items-center px-4 py-2 text-slate-light hover:bg-gray-50 transition-colors"
+                            className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
                           >
                             <Calendar className="w-4 h-4 mr-3" />
                             Find Events
@@ -171,7 +171,7 @@ export const Header: React.FC = () => {
                         <Link
                           to="/vendor-profile"
                           onClick={() => setShowUserMenu(false)}
-                          className="flex items-center px-4 py-2 text-slate-light hover:bg-gray-50 transition-colors"
+                          className="flex items-center px-4 py-2 text-slate-light hover:bg-pearl transition-colors"
                         >
                           <Settings className="w-4 h-4 mr-3" />
                           Profile Settings

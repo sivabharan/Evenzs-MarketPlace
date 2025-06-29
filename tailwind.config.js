@@ -4,17 +4,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Updated to match evenzs.com branding
-        primary: '#7C3AED', // Purple primary
-        secondary: '#1E293B', // Dark slate
-        accent: '#F59E0B', // Amber/Gold accent
-        background: '#FAFAFA', // Light gray background
-        'purple-light': '#A78BFA',
-        'purple-dark': '#5B21B6',
-        'amber-light': '#FCD34D',
-        'amber-dark': '#D97706',
+        // Professional & Elegant Party Color Palette
+        primary: '#6366F1',        // Sophisticated Indigo
+        secondary: '#1E293B',      // Deep Slate (Professional)
+        accent: '#F59E0B',         // Warm Amber (Celebration)
+        background: '#FAFAFA',     // Clean Light Gray
+        
+        // Extended palette for depth and sophistication
+        'indigo-light': '#818CF8',
+        'indigo-dark': '#4338CA',
         'slate-light': '#475569',
         'slate-dark': '#0F172A',
+        'amber-light': '#FCD34D',
+        'amber-dark': '#D97706',
+        
+        // Elegant party accents
+        'rose-elegant': '#F43F5E',     // Sophisticated Rose
+        'emerald-elegant': '#10B981',  // Refined Emerald
+        'violet-elegant': '#8B5CF6',   // Luxurious Violet
+        'gold-elegant': '#EAB308',     // Premium Gold
+        
+        // Neutral sophistication
+        'pearl': '#F8FAFC',
+        'charcoal': '#374151',
+        'platinum': '#E5E7EB',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -27,6 +40,7 @@ export default {
         'sparkle': 'sparkle 3s ease-in-out infinite',
         'celebration': 'celebration 8s ease-in-out infinite',
         'elegant-float': 'elegant-float 5s ease-in-out infinite',
+        'shimmer': 'shimmer 2s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -53,6 +67,10 @@ export default {
           '0%, 100%': { transform: 'translateX(0px) translateY(0px)', opacity: '0.5' },
           '33%': { transform: 'translateX(2px) translateY(-3px)', opacity: '0.7' },
           '66%': { transform: 'translateX(-1px) translateY(-1px)', opacity: '0.6' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
       },
     },

@@ -22,8 +22,8 @@ export const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-purple-light to-accent min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-secondary/10"></div>
+      <section className="relative bg-gradient-to-br from-primary via-indigo-light to-violet-elegant min-h-screen flex items-center">
+        <div className="absolute inset-0 bg-secondary/5"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
@@ -41,7 +41,7 @@ export const Home: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/event-discovery"
-                  className="inline-flex items-center justify-center bg-accent hover:bg-amber-dark text-secondary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
+                  className="inline-flex items-center justify-center bg-accent hover:bg-amber-dark text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
                 >
                   <Ticket className="mr-2 w-5 h-5" />
                   Find Events
@@ -66,17 +66,17 @@ export const Home: React.FC = () => {
                   <p className="text-white/80 text-sm">Discover events</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 transform -rotate-3 hover:rotate-0 transition-transform duration-500 mt-8">
-                  <Building2 className="w-8 h-8 text-accent mb-3" />
+                  <Building2 className="w-8 h-8 text-gold-elegant mb-3" />
                   <h3 className="text-white font-semibold">Corporate</h3>
                   <p className="text-white/80 text-sm">Professional events</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                  <Heart className="w-8 h-8 text-accent mb-3" />
+                  <Heart className="w-8 h-8 text-rose-elegant mb-3" />
                   <h3 className="text-white font-semibold">Weddings</h3>
                   <p className="text-white/80 text-sm">Dream ceremonies</p>
                 </div>
                 <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                  <Music className="w-8 h-8 text-accent mb-3" />
+                  <Music className="w-8 h-8 text-emerald-elegant mb-3" />
                   <h3 className="text-white font-semibold">Concerts</h3>
                   <p className="text-white/80 text-sm">Live entertainment</p>
                 </div>
@@ -87,7 +87,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-pearl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
@@ -101,7 +101,7 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-purple-light rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-indigo-light rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <Search className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-secondary mb-3">Smart Discovery</h3>
@@ -117,15 +117,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-accent to-amber-light rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Clock className="w-10 h-10 text-secondary" />
+              <div className="w-20 h-20 bg-gradient-to-br from-gold-elegant to-amber-light rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-secondary mb-3">Save Time</h3>
               <p className="text-slate-light">Book everything in one place - from tickets to travel to event planning.</p>
             </div>
 
             <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-light to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="w-20 h-20 bg-gradient-to-br from-violet-elegant to-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <TrendingUp className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-secondary mb-3">Best Value</h3>
@@ -136,7 +136,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent">
+      <section className="py-20 bg-gradient-to-r from-primary via-indigo-light to-violet-elegant">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white">
             <div>
@@ -174,7 +174,7 @@ export const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/event-discovery"
-              className="inline-flex items-center justify-center bg-gradient-to-r from-primary to-purple-light hover:from-purple-dark hover:to-primary text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-primary to-indigo-light hover:from-indigo-dark hover:to-primary text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Ticket className="mr-3 w-6 h-6" />
               Find Events & Buy Tickets
