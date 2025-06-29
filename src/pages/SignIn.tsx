@@ -152,10 +152,10 @@ export const SignIn: React.FC = () => {
                 <Users className="w-8 h-8 text-white" />
               )}
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-3xl font-bold text-secondary mb-2">
               {isSignUp ? 'Join' : 'Welcome'} {activeTab === 'customer' ? 'Customer' : activeTab === 'organizer' ? 'Organizer' : 'Vendor'}!
             </h2>
-            <p className="text-gray-600">
+            <p className="text-slate-light">
               {isSignUp ? 'Create your account to get started' : 'Sign in to your account'}
             </p>
           </div>
@@ -169,7 +169,7 @@ export const SignIn: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {isSignUp && (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-slate-light mb-2">
                   Full Name
                 </label>
                 <input
@@ -184,7 +184,7 @@ export const SignIn: React.FC = () => {
             )}
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-slate-light mb-2">
                 Email Address
               </label>
               <div className="relative">
@@ -201,7 +201,7 @@ export const SignIn: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-slate-light mb-2">
                 Password
               </label>
               <div className="relative">
@@ -226,7 +226,7 @@ export const SignIn: React.FC = () => {
 
             {isSignUp && (activeTab === 'organizer' || activeTab === 'vendor') && (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-slate-light mb-2">
                   {activeTab === 'organizer' ? 'Company/Organization' : 'Business Name'}
                 </label>
                 <input
@@ -242,7 +242,7 @@ export const SignIn: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-primary to-accent hover:from-purple-dark hover:to-coral-dark text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="w-full bg-gradient-to-r from-primary to-accent hover:from-purple-dark hover:to-amber-dark text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
               {loading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />

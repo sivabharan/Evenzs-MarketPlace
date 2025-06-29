@@ -4,16 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#6C4AB6',
-        accent: '#FF6B6B',
-        gold: '#F7C948',
-        background: '#FDF9F6',
-        'purple-light': '#8B6FBD',
-        'purple-dark': '#5A3B9F',
-        'coral-light': '#FF8E8E',
-        'coral-dark': '#FF4747',
-        'gold-light': '#F9D96E',
-        'gold-dark': '#F5C52B',
+        // Updated to match evenzs.com branding
+        primary: '#7C3AED', // Purple primary
+        secondary: '#1E293B', // Dark slate
+        accent: '#F59E0B', // Amber/Gold accent
+        background: '#FAFAFA', // Light gray background
+        'purple-light': '#A78BFA',
+        'purple-dark': '#5B21B6',
+        'amber-light': '#FCD34D',
+        'amber-dark': '#D97706',
+        'slate-light': '#475569',
+        'slate-dark': '#0F172A',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

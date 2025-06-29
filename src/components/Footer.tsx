@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PartyPopper, Instagram, Twitter, Facebook, Mail } from 'lucide-react';
+import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-secondary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-6">
-              <PartyPopper className="w-8 h-8 text-accent" />
-              <span className="text-2xl font-bold">Evenzs</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-light rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">E</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  evenzs
+                </span>
+                <span className="text-xs text-gray-400 -mt-1">events made easy</span>
+              </div>
             </Link>
             <p className="text-gray-400 text-lg mb-6 max-w-md">
               Making unforgettable events effortless. Connect with top vendors, plan seamlessly, and celebrate in style.
@@ -21,7 +28,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
               >
                 <Instagram size={20} />
               </a>
@@ -29,7 +36,7 @@ export const Footer: React.FC = () => {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
               >
                 <Twitter size={20} />
               </a>
@@ -37,13 +44,13 @@ export const Footer: React.FC = () => {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a 
                 href="mailto:hello@evenzs.com"
-                className="p-3 bg-gray-800 rounded-full hover:bg-primary transition-colors"
+                className="p-3 bg-slate-dark rounded-full hover:bg-primary transition-colors"
               >
                 <Mail size={20} />
               </a>
@@ -109,9 +116,9 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-slate-dark mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-            <p className="text-gray-400">© 2024 Evenzs. All rights reserved.</p>
+            <p className="text-gray-400">© 2024 evenzs. All rights reserved.</p>
             <a 
               href="https://bolt.new" 
               target="_blank" 
