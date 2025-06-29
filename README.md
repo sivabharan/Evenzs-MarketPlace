@@ -461,6 +461,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Ready to start developing! 🚀
 
 ---
+[![Built with Bolt](https://bolt.new/badge.svg)](https://bolt.new)
+
 
 **Made with ❤️ by the Evenzs Team**
 
