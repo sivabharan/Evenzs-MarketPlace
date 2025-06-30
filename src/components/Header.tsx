@@ -43,35 +43,35 @@ export const Header: React.FC = () => {
             <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {!isDashboard && !isAuthenticated && (
                 <>
-                  <Link to="/event-discovery" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/event-discovery" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Discover Events
                   </Link>
-                  <Link to="/vendor-discovery" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/vendor-discovery" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Find Vendors
                   </Link>
-                  <Link to="/travel" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/travel" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Travel
                   </Link>
-                  <Link to="/create-event" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/create-event" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Plan Event
                   </Link>
                 </>
               )}
               {isAuthenticated && !isDashboard && (
                 <>
-                  <Link to="/event-discovery" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/event-discovery" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Discover Events
                   </Link>
-                  <Link to="/vendor-discovery" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/vendor-discovery" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Find Vendors
                   </Link>
-                  <Link to="/travel" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/travel" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Travel
                   </Link>
-                  <Link to="/create-event" className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to="/create-event" className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Plan Event
                   </Link>
-                  <Link to={getUserDashboard()} className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base">
+                  <Link to={getUserDashboard()} className="text-gray-700 hover:text-[#FF4F6A] transition-colors font-medium text-sm xl:text-base">
                     Dashboard
                   </Link>
                 </>
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
             {/* Action Buttons */}
             <div className="flex items-center space-x-2 sm:space-x-4">
               {isDashboard && isAuthenticated && (
-                <button className="relative p-2 text-gray-700 hover:text-primary transition-colors">
+                <button className="relative p-2 text-gray-700 hover:text-[#FF4F6A] transition-colors">
                   <Bell size={20} />
                   <span className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center">
                     3
@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <Link 
                     to="/event-discovery"
-                    className="hidden sm:flex items-center space-x-2 text-gray-700 hover:text-primary px-3 py-2 rounded-full transition-colors"
+                    className="hidden sm:flex items-center space-x-2 text-gray-700 hover:text-[#FF4F6A] px-3 py-2 rounded-full transition-colors"
                   >
                     <Ticket size={16} />
                     <span className="font-medium text-sm">Buy Tickets</span>
@@ -146,7 +146,7 @@ export const Header: React.FC = () => {
                         <Link
                           to={getUserDashboard()}
                           onClick={() => setShowUserMenu(false)}
-                          className="flex items-center px-4 py-3 text-gray-700 hover:text-primary transition-colors"
+                          className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral transition-colors"
                         >
                           <User className="w-4 h-4 mr-3" />
                           Dashboard
@@ -158,7 +158,7 @@ export const Header: React.FC = () => {
                             <Link
                               to="/customer-dashboard"
                               onClick={() => setShowUserMenu(false)}
-                              className="flex items-center px-4 py-3 text-gray-700 hover:text-primary transition-colors"
+                              className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral transition-colors"
                             >
                               <Ticket className="w-4 h-4 mr-3" />
                               My Tickets
@@ -166,7 +166,7 @@ export const Header: React.FC = () => {
                             <Link
                               to="/event-discovery"
                               onClick={() => setShowUserMenu(false)}
-                              className="flex items-center px-4 py-3 text-gray-700 hover:text-primary transition-colors"
+                              className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral transition-colors"
                             >
                               <Calendar className="w-4 h-4 mr-3" />
                               Find Events
@@ -178,7 +178,7 @@ export const Header: React.FC = () => {
                           <Link
                             to="/vendor-profile"
                             onClick={() => setShowUserMenu(false)}
-                            className="flex items-center px-4 py-3 text-gray-700 hover:text-primary transition-colors"
+                            className="flex items-center px-4 py-3 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral transition-colors"
                           >
                             <Settings className="w-4 h-4 mr-3" />
                             Profile Settings
@@ -201,7 +201,7 @@ export const Header: React.FC = () => {
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
-                className="lg:hidden p-2 text-gray-700 hover:text-primary transition-colors"
+                className="lg:hidden p-2 text-gray-700 hover:text-[#FF4F6A] transition-colors"
               >
                 {showMobileMenu ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -218,28 +218,28 @@ export const Header: React.FC = () => {
                   <Link 
                     to="/event-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Discover Events
                   </Link>
                   <Link 
                     to="/vendor-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Find Vendors
                   </Link>
                   <Link 
                     to="/travel" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Travel
                   </Link>
                   <Link 
                     to="/create-event" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Plan Event
                   </Link>
@@ -250,35 +250,35 @@ export const Header: React.FC = () => {
                   <Link 
                     to="/event-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Discover Events
                   </Link>
                   <Link 
                     to="/vendor-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Find Vendors
                   </Link>
                   <Link 
                     to="/travel" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Travel
                   </Link>
                   <Link 
                     to="/create-event" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Plan Event
                   </Link>
                   <Link 
                     to={getUserDashboard()} 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-neutral rounded-xl transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-[#FF4F6A] hover:bg-neutral rounded-xl transition-colors font-medium"
                   >
                     Dashboard
                   </Link>
