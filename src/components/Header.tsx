@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-neutral shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
@@ -211,7 +211,7 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Menu */}
         {showMobileMenu && (
-          <div className="lg:hidden bg-white border-t border-neutral shadow-lg animate-mobile-safe">
+          <div className="lg:hidden bg-white shadow-lg animate-mobile-safe">
             <div className="px-4 py-4 space-y-3">
               {!isDashboard && !isAuthenticated && (
                 <>
