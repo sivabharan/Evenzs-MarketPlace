@@ -40,6 +40,8 @@ export const AIOnboardingDemo: React.FC = () => {
   const handleStartOnboarding = () => {
     console.log('🤖 Starting AI Onboarding Demo...');
     setShowOnboarding(true);
+    setShowComplete(false);
+    setUserProfile(null);
   };
 
   const handleOnboardingComplete = (profile: UserProfile) => {
@@ -51,6 +53,8 @@ export const AIOnboardingDemo: React.FC = () => {
 
   const handleGetStarted = () => {
     setShowComplete(false);
+    setShowOnboarding(false);
+    setUserProfile(null);
     // In a real app, this would navigate to the appropriate dashboard
     alert('🤖 Welcome to your AI-powered Evenzs experience! Your personalized recommendations are now active.');
   };
@@ -58,6 +62,7 @@ export const AIOnboardingDemo: React.FC = () => {
   const handleCloseOnboarding = () => {
     console.log('❌ AI Onboarding Closed');
     setShowOnboarding(false);
+    setShowComplete(false);
   };
 
   // Mock AI training data from previous users
@@ -261,6 +266,11 @@ export const AIOnboardingDemo: React.FC = () => {
               <Zap className="w-5 h-5 ml-2" />
             </button>
             <p className="text-sm text-charcoal mt-2">Click to start the interactive AI onboarding demo</p>
+            
+            {/* Debug Status */}
+            <div className="mt-4 text-xs text-charcoal bg-pearl rounded-lg p-2">
+              Status: {showOnboarding ? '🤖 AI Active' : showComplete ? '✅ Complete' : '⏳ Ready'}
+            </div>
           </div>
         </div>
 
