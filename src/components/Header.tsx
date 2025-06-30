@@ -45,25 +45,25 @@ export const Header: React.FC = () => {
                 <>
                   <Link 
                     to="/event-discovery" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Discover Events
                   </Link>
                   <Link 
                     to="/vendor-discovery" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Find Vendors
                   </Link>
                   <Link 
                     to="/travel" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Travel
                   </Link>
                   <Link 
                     to="/create-event" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Plan Event
                   </Link>
@@ -73,31 +73,31 @@ export const Header: React.FC = () => {
                 <>
                   <Link 
                     to="/event-discovery" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Discover Events
                   </Link>
                   <Link 
                     to="/vendor-discovery" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Find Vendors
                   </Link>
                   <Link 
                     to="/travel" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Travel
                   </Link>
                   <Link 
                     to="/create-event" 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Plan Event
                   </Link>
                   <Link 
                     to={getUserDashboard()} 
-                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer px-3 py-2 rounded-lg hover:bg-gray-50 active:bg-gray-100 transform hover:scale-105 transition-all duration-200"
+                    className="text-gray-700 hover:text-primary transition-colors font-medium text-sm xl:text-base cursor-pointer"
                   >
                     Dashboard
                   </Link>
@@ -108,9 +108,9 @@ export const Header: React.FC = () => {
             {/* Action Buttons */}
             <div className="flex items-center space-x-2 sm:space-x-4">
               {isDashboard && isAuthenticated && (
-                <button className="relative p-2 text-gray-700 hover:text-primary transition-colors cursor-pointer hover:bg-gray-50 rounded-lg transform hover:scale-110 transition-all duration-200">
+                <button className="relative p-2 text-gray-700 hover:text-primary transition-colors cursor-pointer">
                   <Bell size={20} />
-                  <span className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center animate-pulse">
+                  <span className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center">
                     3
                   </span>
                 </button>
@@ -120,14 +120,14 @@ export const Header: React.FC = () => {
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <Link 
                     to="/event-discovery"
-                    className="hidden sm:flex items-center space-x-2 text-gray-700 hover:text-primary px-3 py-2 rounded-full transition-colors cursor-pointer hover:bg-gray-50 transform hover:scale-105 transition-all duration-200"
+                    className="hidden sm:flex items-center space-x-2 text-gray-700 hover:text-primary transition-colors cursor-pointer"
                   >
                     <Ticket size={16} />
                     <span className="font-medium text-sm">Buy Tickets</span>
                   </Link>
                   <Link 
                     to="/signin" 
-                    className="flex items-center space-x-1 sm:space-x-2 bg-sunset-gradient hover:shadow-coral-glow text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg animate-coral-glow text-sm sm:text-base cursor-pointer transform active:scale-95"
+                    className="flex items-center space-x-1 sm:space-x-2 bg-sunset-gradient hover:shadow-coral-glow text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg animate-coral-glow text-sm sm:text-base cursor-pointer"
                   >
                     <User size={16} />
                     <span className="font-medium">Sign In</span>
@@ -137,7 +137,7 @@ export const Header: React.FC = () => {
                 <div className="relative">
                   <button
                     onClick={() => setShowUserMenu(!showUserMenu)}
-                    className="flex items-center space-x-2 sm:space-x-3 bg-white hover:bg-gray-50 border border-gray-200 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full transition-all duration-300 hover:shadow-md cursor-pointer transform hover:scale-105 active:scale-95"
+                    className="flex items-center space-x-2 sm:space-x-3 bg-white hover:bg-gray-50 border border-gray-200 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full transition-all duration-300 hover:shadow-md cursor-pointer"
                   >
                     <img
                       src={user.avatar}
@@ -148,7 +148,7 @@ export const Header: React.FC = () => {
                       <div className="text-sm font-medium text-gray-900">{user.name}</div>
                       <div className="text-xs text-gray-700 capitalize">{user.role}</div>
                     </div>
-                    <ChevronDown className={`w-4 h-4 text-gray-700 transition-transform duration-200 ${showUserMenu ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 text-gray-700 transition-transform ${showUserMenu ? 'rotate-180' : ''}`} />
                   </button>
 
                   {/* User Menu Dropdown */}
@@ -173,7 +173,7 @@ export const Header: React.FC = () => {
                         <Link
                           to={getUserDashboard()}
                           onClick={() => setShowUserMenu(false)}
-                          className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer hover:text-primary transform hover:translate-x-1 transition-all duration-200"
+                          className="flex items-center px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors cursor-pointer"
                         >
                           <User className="w-4 h-4 mr-3" />
                           Dashboard
@@ -185,7 +185,7 @@ export const Header: React.FC = () => {
                             <Link
                               to="/customer-dashboard"
                               onClick={() => setShowUserMenu(false)}
-                              className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer hover:text-primary transform hover:translate-x-1 transition-all duration-200"
+                              className="flex items-center px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors cursor-pointer"
                             >
                               <Ticket className="w-4 h-4 mr-3" />
                               My Tickets
@@ -193,7 +193,7 @@ export const Header: React.FC = () => {
                             <Link
                               to="/event-discovery"
                               onClick={() => setShowUserMenu(false)}
-                              className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer hover:text-primary transform hover:translate-x-1 transition-all duration-200"
+                              className="flex items-center px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors cursor-pointer"
                             >
                               <Calendar className="w-4 h-4 mr-3" />
                               Find Events
@@ -205,7 +205,7 @@ export const Header: React.FC = () => {
                           <Link
                             to="/vendor-profile"
                             onClick={() => setShowUserMenu(false)}
-                            className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer hover:text-primary transform hover:translate-x-1 transition-all duration-200"
+                            className="flex items-center px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors cursor-pointer"
                           >
                             <Settings className="w-4 h-4 mr-3" />
                             Profile Settings
@@ -214,7 +214,7 @@ export const Header: React.FC = () => {
                         
                         <button
                           onClick={handleSignOut}
-                          className="w-full flex items-center px-4 py-3 text-red-600 hover:bg-red-50 transition-colors cursor-pointer transform hover:translate-x-1 transition-all duration-200"
+                          className="w-full flex items-center px-4 py-3 text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
                         >
                           <LogOut className="w-4 h-4 mr-3" />
                           Sign Out
@@ -228,7 +228,7 @@ export const Header: React.FC = () => {
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
-                className="lg:hidden p-2 text-gray-700 hover:text-primary transition-colors cursor-pointer hover:bg-gray-50 rounded-lg transform hover:scale-110 transition-all duration-200"
+                className="lg:hidden p-2 text-gray-700 hover:text-primary transition-colors cursor-pointer"
               >
                 {showMobileMenu ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -245,28 +245,28 @@ export const Header: React.FC = () => {
                   <Link 
                     to="/event-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Discover Events
                   </Link>
                   <Link 
                     to="/vendor-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Find Vendors
                   </Link>
                   <Link 
                     to="/travel" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Travel
                   </Link>
                   <Link 
                     to="/create-event" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Plan Event
                   </Link>
@@ -277,35 +277,35 @@ export const Header: React.FC = () => {
                   <Link 
                     to="/event-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Discover Events
                   </Link>
                   <Link 
                     to="/vendor-discovery" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Find Vendors
                   </Link>
                   <Link 
                     to="/travel" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Travel
                   </Link>
                   <Link 
                     to="/create-event" 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Plan Event
                   </Link>
                   <Link 
                     to={getUserDashboard()} 
                     onClick={closeMobileMenu}
-                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer transform hover:translate-x-2 transition-all duration-200"
+                    className="block py-3 px-4 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors font-medium cursor-pointer"
                   >
                     Dashboard
                   </Link>
@@ -317,7 +317,7 @@ export const Header: React.FC = () => {
                   <Link 
                     to="/signin" 
                     onClick={closeMobileMenu}
-                    className="block w-full bg-sunset-gradient text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 hover:scale-105 shadow-lg animate-coral-glow cursor-pointer transform active:scale-95"
+                    className="block w-full bg-sunset-gradient text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 hover:scale-105 shadow-lg animate-coral-glow cursor-pointer"
                   >
                     Sign In / Sign Up
                   </Link>

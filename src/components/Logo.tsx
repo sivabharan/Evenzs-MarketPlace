@@ -354,7 +354,7 @@ export const Logo: React.FC<LogoProps> = ({
         <div className="flex flex-col">
           <div className="flex items-baseline">
             <span className={`${textSizeClasses[size]} font-bold ${colors.text} tracking-tight`}>
-              even
+              Even
             </span>
             <span className={`${textSizeClasses[size]} font-bold bg-sunset-gradient bg-clip-text text-transparent tracking-tight`}>
               z
