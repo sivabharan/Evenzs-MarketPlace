@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secondary via-charcoal to-charcoal-light min-h-screen-mobile flex items-center">
+      <section className="relative bg-gradient-to-br from-slate-800 via-gray-900 to-slate-900 min-h-screen flex items-center">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -38,7 +38,7 @@ export const Home: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Link 
                   to="/event-discovery"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl animate-gold-glow"
+                  className="inline-flex items-center justify-center bg-gradient-to-r from-primary to-purple-light hover:from-purple-dark hover:to-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl"
                 >
                   <Ticket className="mr-2 w-5 h-5" />
                   Find Events
@@ -79,13 +79,13 @@ export const Home: React.FC = () => {
                   <h3 className="text-white font-semibold text-sm sm:text-base">Corporate</h3>
                   <p className="text-white/80 text-xs sm:text-sm">Professional events</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500 border border-rose-gold/20">
-                  <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-rose-gold mb-2 sm:mb-3" />
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500 border border-coral/20">
+                  <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-coral mb-2 sm:mb-3" />
                   <h3 className="text-white font-semibold text-sm sm:text-base">Weddings</h3>
                   <p className="text-white/80 text-xs sm:text-sm">Dream ceremonies</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-500 border border-bronze/20">
-                  <Music className="w-6 h-6 sm:w-8 sm:h-8 text-bronze mb-2 sm:mb-3" />
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-500 border border-emerald/20">
+                  <Music className="w-6 h-6 sm:w-8 sm:h-8 text-emerald mb-2 sm:mb-3" />
                   <h3 className="text-white font-semibold text-sm sm:text-base">Concerts</h3>
                   <p className="text-white/80 text-xs sm:text-sm">Live entertainment</p>
                 </div>
@@ -96,13 +96,13 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 sm:py-20 bg-pearl">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Why Choose <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Our Platform</span>?
             </h2>
-            <p className="text-lg sm:text-xl text-charcoal max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
               We make event planning and discovery effortless with our intelligent platform, 
               trusted network, and seamless booking experience.
             </p>
@@ -110,42 +110,42 @@ export const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary to-gold-elegant rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:animate-gold-glow">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary to-purple-light rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <Search className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">Smart Discovery</h3>
-              <p className="text-charcoal text-sm sm:text-base">Find the perfect events and vendors with our intelligent search and matching.</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Smart Discovery</h3>
+              <p className="text-gray-700 text-sm sm:text-base">Find the perfect events and vendors with our intelligent search and matching.</p>
             </div>
 
             <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-accent to-champagne rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:animate-gold-glow">
-                <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-secondary" />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-accent to-amber-light rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">Trusted Network</h3>
-              <p className="text-charcoal text-sm sm:text-base">All events and vendors are verified, insured, and rated by real customers.</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Trusted Network</h3>
+              <p className="text-gray-700 text-sm sm:text-base">All events and vendors are verified, insured, and rated by real customers.</p>
             </div>
 
             <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gold-elegant to-gold-light rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:animate-gold-glow">
-                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-secondary" />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald to-sky rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Clock className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">Save Time</h3>
-              <p className="text-charcoal text-sm sm:text-base">Book everything in one place - from tickets to travel to event planning.</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Save Time</h3>
+              <p className="text-gray-700 text-sm sm:text-base">Book everything in one place - from tickets to travel to event planning.</p>
             </div>
 
             <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-bronze to-copper rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:animate-gold-glow">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-coral to-coral-dark rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <TrendingUp className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">Best Value</h3>
-              <p className="text-charcoal text-sm sm:text-base">Transparent pricing with no hidden fees. Get the most for your budget.</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">Best Value</h3>
+              <p className="text-gray-700 text-sm sm:text-base">Transparent pricing with no hidden fees. Get the most for your budget.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-secondary via-charcoal to-charcoal-light relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-slate-800 via-gray-900 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center text-white">
@@ -154,11 +154,11 @@ export const Home: React.FC = () => {
               <div className="text-white/90 text-sm sm:text-lg">Events Hosted</div>
             </div>
             <div className="group">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-accent to-gold-elegant bg-clip-text text-transparent group-hover:animate-pulse">10K+</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-accent to-amber-light bg-clip-text text-transparent group-hover:animate-pulse">10K+</div>
               <div className="text-white/90 text-sm sm:text-lg">Trusted Vendors</div>
             </div>
             <div className="group">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-gold-elegant to-primary bg-clip-text text-transparent group-hover:animate-pulse">500K+</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-emerald to-sky bg-clip-text text-transparent group-hover:animate-pulse">500K+</div>
               <div className="text-white/90 text-sm sm:text-lg">Tickets Sold</div>
             </div>
             <div className="group">
@@ -173,18 +173,18 @@ export const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Ready for Your Next Event?
           </h2>
-          <p className="text-lg sm:text-xl text-charcoal mb-8 sm:mb-10">
+          <p className="text-lg sm:text-xl text-gray-700 mb-8 sm:mb-10">
             Join thousands of happy customers who trust us for their special moments.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link 
               to="/event-discovery"
-              className="inline-flex items-center justify-center bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-primary to-purple-light hover:from-purple-dark hover:to-primary text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Ticket className="mr-2 sm:mr-3 w-5 h-5 sm:w-6 sm:h-6" />
               Find Events & Buy Tickets
@@ -192,7 +192,7 @@ export const Home: React.FC = () => {
             <Link 
               to="/signin"
               state={{ role: 'organizer' }}
-              className="inline-flex items-center justify-center border-2 border-primary text-primary hover:bg-primary hover:text-secondary px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300"
+              className="inline-flex items-center justify-center border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300"
             >
               <Calendar className="mr-2 sm:mr-3 w-5 h-5 sm:w-6 sm:h-6" />
               Plan an Event
@@ -202,7 +202,7 @@ export const Home: React.FC = () => {
             <Link 
               to="/signin"
               state={{ role: 'vendor' }}
-              className="inline-flex items-center justify-center text-charcoal hover:text-primary px-4 sm:px-6 py-2 rounded-full font-medium transition-colors"
+              className="inline-flex items-center justify-center text-gray-700 hover:text-primary px-4 sm:px-6 py-2 rounded-full font-medium transition-colors"
             >
               <Users className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
               Join as a Vendor

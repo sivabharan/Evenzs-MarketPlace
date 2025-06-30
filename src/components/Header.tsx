@@ -100,7 +100,7 @@ export const Header: React.FC = () => {
                   </Link>
                   <Link 
                     to="/signin" 
-                    className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl animate-gold-glow text-sm sm:text-base"
+                    className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-primary to-purple-light hover:from-purple-dark hover:to-primary text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-sm sm:text-base"
                   >
                     <User size={16} />
                     <span className="font-medium">Sign In</span>
@@ -290,7 +290,7 @@ export const Header: React.FC = () => {
                   <Link 
                     to="/signin" 
                     onClick={closeMobileMenu}
-                    className="block w-full bg-gradient-to-r from-primary to-accent text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow"
+                    className="block w-full bg-gradient-to-r from-primary to-purple-light text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 hover:scale-105 shadow-lg"
                   >
                     Sign In / Sign Up
                   </Link>
