@@ -10,6 +10,7 @@ interface UserProfile {
   purpose: string;
   services?: string[];
   eventTypes?: string[];
+  organizerEventTypes?: string[];
   targetAudience?: string;
   coverageArea?: string;
   vendorNeeds?: string[];
@@ -267,12 +268,33 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
     }
   ];
 
-  const currentQuestion = questions.find(q => {
-    if (q.condition) {
-      return q.condition(userProfile) && !userProfile.hasOwnProperty(q.id);
+  // Find the current question based on conditions and what's already answered
+  const getCurrentQuestion = () => {
+    // First, check if userType is not set
+    if (!userProfile.userType) {
+      return questions.find(q => q.id === 'userType');
     }
-    return !userProfile.hasOwnProperty(q.id);
-  });
+
+    // Then find the next unanswered question that meets conditions
+    for (const question of questions) {
+      // Skip userType since it's already answered
+      if (question.id === 'userType') continue;
+      
+      // Check if this question has already been answered
+      if (userProfile.hasOwnProperty(question.id)) continue;
+      
+      // Check if the question's condition is met (if it has one)
+      if (question.condition && !question.condition(userProfile)) continue;
+      
+      // This is our next question
+      return question;
+    }
+    
+    // No more questions
+    return null;
+  };
+
+  const currentQuestion = getCurrentQuestion();
 
   const recordResponse = (questionId: string, answer: any, confidence: number = 0.9) => {
     const response = {
@@ -306,22 +328,18 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
     const updatedProfile = { ...userProfile, [questionId]: answer };
     setUserProfile(updatedProfile);
 
-    // Check if we have all required answers
-    const remainingQuestions = questions.filter(q => {
-      if (q.condition) {
-        return q.condition(updatedProfile) && !updatedProfile.hasOwnProperty(q.id);
-      }
-      return !updatedProfile.hasOwnProperty(q.id);
-    });
-
-    if (remainingQuestions.length === 0) {
-      // Generate final profile with AI suggestions
+    // Check if we have more questions
+    const nextQuestion = getCurrentQuestion();
+    
+    if (!nextQuestion) {
+      // No more questions, generate final profile
       setAiThinking(true);
       setTimeout(() => {
         const finalProfile = generateAIProfile(updatedProfile);
         onComplete(finalProfile);
       }, 2000);
     } else {
+      // More questions available, continue
       simulateAIProcessing();
       setTimeout(() => setCurrentStep(currentStep + 1), 2500);
     }
@@ -477,6 +495,10 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
     return null;
   }
 
+  const getQuestionNumber = () => {
+    return profile.aiTrainingData.responses.length + 1;
+  };
+
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
@@ -505,13 +527,13 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         {/* Progress */}
         <div className="px-6 py-4 bg-pearl">
           <div className="flex items-center justify-between text-sm text-charcoal mb-2">
-            <span>Question {currentStep + 1} of 5</span>
-            <span>{Math.round(((currentStep + 1) / 5) * 100)}% Complete</span>
+            <span>Question {getQuestionNumber()}</span>
+            <span>{Math.round((getQuestionNumber() / 5) * 100)}% Complete</span>
           </div>
           <div className="w-full bg-platinum rounded-full h-2">
             <div 
               className="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-300"
-              style={{ width: `${((currentStep + 1) / 5) * 100}%` }}
+              style={{ width: `${(getQuestionNumber() / 5) * 100}%` }}
             ></div>
           </div>
         </div>
