@@ -14,7 +14,8 @@ import {
   Shield,
   Clock,
   Ticket,
-  Search
+  Search,
+  Bot
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
@@ -50,6 +51,18 @@ export const Home: React.FC = () => {
                 >
                   <Calendar className="mr-2 w-5 h-5" />
                   Plan Event
+                </Link>
+              </div>
+              
+              {/* AI Onboarding CTA */}
+              <div className="mt-6 pt-6 border-t border-white/20">
+                <Link 
+                  to="/ai-onboarding-demo"
+                  className="inline-flex items-center justify-center bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/30 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
+                >
+                  <Bot className="mr-2 w-4 h-4" />
+                  Experience AI Onboarding
+                  <Sparkles className="ml-2 w-4 h-4" />
                 </Link>
               </div>
             </div>
