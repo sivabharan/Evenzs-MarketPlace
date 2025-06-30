@@ -33,9 +33,75 @@ export default {
         'ivory': '#FFFFF0',        // Ivory
         'cream': '#F5F5DC',        // Cream
         'smoke': '#F5F5F5',        // Light Smoke
+
+        // Additional colors for better contrast and visibility
+        'purple-light': '#9333EA',
+        'purple-dark': '#7C3AED',
+        'coral-dark': '#DC2626',
+        'green': {
+          100: '#DCFCE7',
+          500: '#22C55E',
+          600: '#16A34A',
+          800: '#166534',
+        },
+        'blue': {
+          100: '#DBEAFE',
+          500: '#3B82F6',
+          600: '#2563EB',
+        },
+        'yellow': {
+          400: '#FACC15',
+        },
+        'red': {
+          50: '#FEF2F2',
+          500: '#EF4444',
+          600: '#DC2626',
+          700: '#B91C1C',
+        },
+        'gray': {
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
+        }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+      },
+      screens: {
+        'xs': '375px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        // iPhone specific breakpoints
+        'iphone-se': '375px',
+        'iphone-12': '390px',
+        'iphone-14-pro': '393px',
+        'iphone-16-pro': '402px',
+        'iphone-16-pro-max': '430px',
+      },
+      spacing: {
+        'safe-top': 'env(safe-area-inset-top)',
+        'safe-bottom': 'env(safe-area-inset-bottom)',
+        'safe-left': 'env(safe-area-inset-left)',
+        'safe-right': 'env(safe-area-inset-right)',
+      },
+      minHeight: {
+        'screen-safe': 'calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))',
+        'screen-mobile': '100vh',
+        'dvh': '100dvh',
+      },
+      maxHeight: {
+        'screen-safe': 'calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))',
+        'dvh': '100dvh',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -47,6 +113,7 @@ export default {
         'elegant-float': 'elegant-float 5s ease-in-out infinite',
         'shimmer': 'shimmer 2s ease-in-out infinite',
         'gold-glow': 'gold-glow 3s ease-in-out infinite',
+        'mobile-safe': 'mobile-safe 0.3s ease-out',
       },
       keyframes: {
         float: {
@@ -82,8 +149,13 @@ export default {
           '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
           '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.5)' },
         },
+        'mobile-safe': {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
       },
     },
   },
   plugins: [],
+  important: true, // This forces Tailwind to use !important on all utilities
 };
