@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Sparkles, ArrowRight, Calendar, Users, Music, MapPin, Bot, Zap, Target } from 'lucide-react';
+import { CheckCircle, Sparkles, ArrowRight, Calendar, Users, Music, MapPin, Bot, Zap, Target, Brain, TrendingUp } from 'lucide-react';
 
 interface UserProfile {
   userType: 'customer' | 'vendor' | 'organizer' | null;
@@ -47,15 +47,18 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
     if (profile.userType === 'customer') {
       const interests = profile.interests.slice(0, 2).join(' and ');
       const artists = profile.favoriteArtists.length > 0 ? `, especially ${profile.favoriteArtists.slice(0, 2).join(' and ')}` : '';
-      return `You love ${interests}${artists}, prefer ${profile.preferredVibe} vibes, and are ${profile.locationPreference === 'austin-tx' ? 'focused on local Austin events' : 'open to travel within ' + profile.locationPreference}.`;
+      const location = profile.locationPreference === 'austin-tx' ? 'focused on local Austin events' : 
+                     profile.locationPreference === 'texas' ? 'open to travel within Texas' :
+                     profile.locationPreference === 'national' ? 'willing to travel nationally' : 'open to international events';
+      return `You love ${interests}${artists}, prefer ${profile.preferredVibe?.replace('-', ' ')} vibes, and are ${location}.`;
     } else if (profile.userType === 'vendor') {
       const services = profile.services?.slice(0, 2).join(' and ') || 'services';
       const events = profile.eventTypes?.slice(0, 2).join(' and ') || 'events';
-      return `You provide ${services} for ${events}, covering ${profile.coverageArea}. Your specialty: ${profile.targetAudience || 'premium event services'}.`;
+      return `You provide ${services} for ${events}, covering ${profile.coverageArea?.replace('-', ' ')}. Your specialty: ${profile.targetAudience || 'premium event services'}.`;
     } else if (profile.userType === 'organizer') {
       const events = profile.organizerEventTypes?.slice(0, 2).join(' and ') || 'events';
       const vendors = profile.vendorNeeds?.slice(0, 2).join(' and ') || 'vendor services';
-      return `You organize ${events} in ${profile.region}, typically needing ${vendors}. Platform focus: ${profile.supportNeeds?.slice(0, 2).join(' and ') || 'event management'}.`;
+      return `You organize ${events} in ${profile.region?.replace('-', ' ')}, typically needing ${vendors}. Platform focus: ${profile.supportNeeds?.slice(0, 2).join(' and ') || 'event management'}.`;
     }
     return "Welcome to your personalized Evenzs experience!";
   };
@@ -82,6 +85,18 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
     if (patterns.includes('foodie')) {
       insights.push('🍽️ Foodie - Culinary events and food festivals curated for you');
     }
+    if (patterns.includes('latin-music-enthusiast')) {
+      insights.push('🎺 Latin Music Fan - Reggaeton and Latin concerts personalized for you');
+    }
+    if (patterns.includes('indie-music-lover')) {
+      insights.push('🎸 Indie Music Lover - Alternative and indie events matched to your taste');
+    }
+    if (patterns.includes('business-focused')) {
+      insights.push('💼 Business Professional - Corporate event tools and networking opportunities');
+    }
+    if (patterns.includes('visual-artist')) {
+      insights.push('📸 Visual Artist - Photography and creative opportunities highlighted');
+    }
 
     return insights.length > 0 ? insights : ['🎯 Personalized recommendations are being prepared for you'];
   };
@@ -89,24 +104,24 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
   const getRecommendations = () => {
     if (profile.userType === 'customer') {
       return [
-        'Discover curated events matching your music taste',
-        'Get notified about new events in your preferred locations',
-        'Connect with like-minded event-goers',
-        'Access exclusive early-bird pricing and VIP experiences'
+        'Discover curated events matching your music taste and preferences',
+        'Get AI-powered notifications about new events in your preferred locations',
+        'Connect with like-minded event-goers through intelligent matching',
+        'Access exclusive early-bird pricing and VIP experiences based on your profile'
       ];
     } else if (profile.userType === 'organizer') {
       return [
         'Browse our AI-matched network of verified vendors',
-        'Get intelligent vendor recommendations based on your event type',
-        'Access event planning templates and automation tools',
-        'Manage all your events with our comprehensive dashboard'
+        'Get intelligent vendor recommendations based on your event type and needs',
+        'Access event planning templates and automation tools tailored to your style',
+        'Manage all your events with our comprehensive AI-enhanced dashboard'
       ];
     } else if (profile.userType === 'vendor') {
       return [
-        'Create an AI-optimized business profile',
-        'Receive qualified leads matching your specialties',
-        'Showcase your portfolio with intelligent categorization',
-        'Grow your business with our analytics and insights'
+        'Create an AI-optimized business profile that highlights your strengths',
+        'Receive qualified leads matching your specialties and coverage area',
+        'Showcase your portfolio with intelligent categorization and tagging',
+        'Grow your business with our analytics and AI-driven insights'
       ];
     }
     return [];
@@ -124,8 +139,9 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
       aiMetadata: {
         completionRate: profile.aiTrainingData.preferences.completionRate || 100,
         behaviorPatterns: profile.aiTrainingData.behaviorPatterns,
-        responseConfidence: profile.aiTrainingData.responses.reduce((avg, r) => avg + r.confidence, 0) / profile.aiTrainingData.responses.length,
-        timestamp: new Date().toISOString()
+        responseConfidence: profile.aiTrainingData.preferences.aiConfidence || 0.9,
+        timestamp: new Date().toISOString(),
+        preferenceStrength: profile.aiTrainingData.preferences.preferenceStrength || 'high'
       }
     };
   };
@@ -169,6 +185,9 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
               <span className="bg-accent/10 text-accent text-sm px-3 py-1 rounded-full font-medium">
                 {profile.aiTrainingData.preferences.preferenceStrength || 'High'} Confidence
               </span>
+              <span className="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full font-medium">
+                {Math.round((profile.aiTrainingData.preferences.aiConfidence || 0.9) * 100)}% Match
+              </span>
             </div>
             <p className="text-charcoal text-sm leading-relaxed">
               {getPersonalizedSummary()}
@@ -178,8 +197,8 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
           {/* AI Insights */}
           <div className="mb-4">
             <h4 className="font-medium text-secondary mb-2 flex items-center">
-              <Sparkles className="w-4 h-4 mr-2 text-primary" />
-              AI Insights:
+              <Brain className="w-4 h-4 mr-2 text-primary" />
+              AI Behavioral Insights:
             </h4>
             <div className="space-y-2">
               {getAIInsights().map((insight, index) => (
@@ -193,7 +212,10 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
           {/* Suggested Tags */}
           {profile.suggestedTags.length > 0 && (
             <div>
-              <h4 className="font-medium text-secondary mb-2">AI-Generated Recommendation Tags:</h4>
+              <h4 className="font-medium text-secondary mb-2 flex items-center">
+                <Sparkles className="w-4 h-4 mr-2 text-primary" />
+                AI-Generated Recommendation Tags:
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {profile.suggestedTags.map((tag) => (
                   <span key={tag} className="bg-primary/10 text-primary text-sm px-3 py-1 rounded-full">
@@ -203,6 +225,17 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
               </div>
             </div>
           )}
+        </div>
+
+        {/* Training Data Preview */}
+        <div className="p-6 border-b border-platinum">
+          <h4 className="font-medium text-secondary mb-3 flex items-center">
+            <TrendingUp className="w-4 h-4 mr-2 text-primary" />
+            AI Training Data Generated:
+          </h4>
+          <div className="bg-charcoal rounded-lg p-4 text-green-400 font-mono text-xs overflow-x-auto">
+            <pre>{JSON.stringify(generateTrainingData(), null, 2)}</pre>
+          </div>
         </div>
 
         {/* What's Next */}

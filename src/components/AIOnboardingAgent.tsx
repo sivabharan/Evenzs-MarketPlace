@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquare, User, Calendar, Music, MapPin, Heart, Sparkles, ArrowRight, X, Bot, Zap } from 'lucide-react';
+import { MessageSquare, User, Calendar, Music, MapPin, Heart, Sparkles, ArrowRight, X, Bot, Zap, Brain } from 'lucide-react';
 
 interface UserProfile {
   userType: 'customer' | 'vendor' | 'organizer' | null;
@@ -14,7 +14,6 @@ interface UserProfile {
   coverageArea?: string;
   vendorNeeds?: string[];
   region?: string;
-  promotionChannels?: string[];
   supportNeeds?: string[];
   suggestedTags: string[];
   aiTrainingData: {
@@ -37,6 +36,7 @@ interface AIOnboardingAgentProps {
 export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete, onClose }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
+  const [aiThinking, setAiThinking] = useState(false);
   const [userProfile, setUserProfile] = useState<UserProfile>({
     userType: null,
     interests: [],
@@ -57,6 +57,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       id: 'userType',
       question: "Hi there! 👋 I'm your AI assistant at Evenzs. I'm here to create a personalized experience just for you. Are you signing up as a Customer, Vendor, or Organizer?",
       type: 'choice',
+      aiAnalysis: "Analyzing user intent and role preference...",
       options: [
         { 
           value: 'customer', 
@@ -85,6 +86,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "Perfect! What types of events make your heart race? ✨",
       type: 'multiChoice',
       condition: (profile: UserProfile) => profile.userType === 'customer',
+      aiAnalysis: "AI is analyzing your event preferences to build your interest profile...",
       options: [
         { value: 'concerts', label: 'Concerts & Live Music' },
         { value: 'food-festivals', label: 'Food Festivals' },
@@ -101,6 +103,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "I see you love music! 🎵 Tell me about your favorite artists or genres - this helps me find events you'll absolutely love!",
       type: 'text',
       condition: (profile: UserProfile) => profile.userType === 'customer' && profile.interests.includes('concerts'),
+      aiAnalysis: "AI is processing your music preferences to identify patterns and genres...",
       placeholder: "e.g., Billie Eilish, Coldplay, Jazz, Electronic, Bad Bunny..."
     },
     {
@@ -108,6 +111,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "What kind of vibe are you usually looking for? 🌟",
       type: 'choice',
       condition: (profile: UserProfile) => profile.userType === 'customer',
+      aiAnalysis: "AI is determining your event atmosphere preferences...",
       options: [
         { value: 'chill-outdoor', label: 'Chill and Outdoor', description: 'Relaxed, nature-focused events' },
         { value: 'high-energy', label: 'High Energy', description: 'Loud, exciting, dance-worthy' },
@@ -121,6 +125,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "How far would you travel for the perfect event? 🗺️",
       type: 'choice',
       condition: (profile: UserProfile) => profile.userType === 'customer',
+      aiAnalysis: "AI is mapping your travel willingness and geographic preferences...",
       options: [
         { value: 'austin-tx', label: 'Austin, TX', description: 'Keep it local' },
         { value: 'texas', label: 'Open to travel within Texas', description: 'State-wide adventures' },
@@ -133,6 +138,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "What brings you to Evenzs? 🎯",
       type: 'choice',
       condition: (profile: UserProfile) => profile.userType === 'customer',
+      aiAnalysis: "AI is understanding your primary motivation and goals...",
       options: [
         { value: 'discover-events', label: 'Discover Events', description: 'Find new experiences' },
         { value: 'join-community', label: 'Join Community', description: 'Connect with like-minded people' },
@@ -147,6 +153,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "Awesome! What services do you provide for events? 🎨",
       type: 'multiChoice',
       condition: (profile: UserProfile) => profile.userType === 'vendor',
+      aiAnalysis: "AI is cataloging your service offerings and expertise areas...",
       options: [
         { value: 'dj', label: 'DJ Services' },
         { value: 'photography', label: 'Photography' },
@@ -163,6 +170,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "What types of events do you love working on? 💫",
       type: 'multiChoice',
       condition: (profile: UserProfile) => profile.userType === 'vendor',
+      aiAnalysis: "AI is identifying your event specializations and target markets...",
       options: [
         { value: 'weddings', label: 'Weddings' },
         { value: 'luxury-retreats', label: 'Luxury Retreats' },
@@ -177,6 +185,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "What's your coverage area? 📍",
       type: 'choice',
       condition: (profile: UserProfile) => profile.userType === 'vendor',
+      aiAnalysis: "AI is mapping your service coverage and geographic reach...",
       options: [
         { value: 'texas-usa', label: 'Texas, USA', description: 'Statewide coverage' },
         { value: 'southwest-usa', label: 'Southwest USA', description: 'Multi-state region' },
@@ -189,6 +198,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "What's your unique selling point or specialty? ✨",
       type: 'text',
       condition: (profile: UserProfile) => profile.userType === 'vendor',
+      aiAnalysis: "AI is processing your unique value proposition and market positioning...",
       placeholder: "e.g., Natural light-focused luxury photography, Authentic Mexican cuisine, Vintage-style DJ sets..."
     },
 
@@ -198,6 +208,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "Fantastic! What types of events do you organize? 🎪",
       type: 'multiChoice',
       condition: (profile: UserProfile) => profile.userType === 'organizer',
+      aiAnalysis: "AI is categorizing your event planning expertise and focus areas...",
       options: [
         { value: 'corporate-conferences', label: 'Corporate Conferences' },
         { value: 'product-launches', label: 'Product Launches' },
@@ -214,6 +225,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "What vendor services do you typically need? 🛠️",
       type: 'multiChoice',
       condition: (profile: UserProfile) => profile.userType === 'organizer',
+      aiAnalysis: "AI is analyzing your vendor requirements and service dependencies...",
       options: [
         { value: 'av-equipment', label: 'AV Equipment' },
         { value: 'catering', label: 'Catering' },
@@ -230,6 +242,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "Which regions do you serve? 🌎",
       type: 'choice',
       condition: (profile: UserProfile) => profile.userType === 'organizer',
+      aiAnalysis: "AI is mapping your operational territory and market reach...",
       options: [
         { value: 'austin-dallas', label: 'Austin & Dallas', description: 'Major Texas cities' },
         { value: 'texas-statewide', label: 'Texas Statewide', description: 'All of Texas' },
@@ -242,6 +255,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       question: "What platform features would help you most? 🚀",
       type: 'multiChoice',
       condition: (profile: UserProfile) => profile.userType === 'organizer',
+      aiAnalysis: "AI is identifying your technology needs and platform preferences...",
       options: [
         { value: 'ticketing', label: 'Ticketing System' },
         { value: 'vendor-portal', label: 'Vendor Management Portal' },
@@ -277,9 +291,13 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
     }));
   };
 
-  const simulateTyping = () => {
-    setIsTyping(true);
-    setTimeout(() => setIsTyping(false), 1500);
+  const simulateAIProcessing = () => {
+    setAiThinking(true);
+    setTimeout(() => {
+      setAiThinking(false);
+      setIsTyping(true);
+      setTimeout(() => setIsTyping(false), 1500);
+    }, 1000);
   };
 
   const handleAnswer = (questionId: string, answer: any) => {
@@ -298,11 +316,14 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
 
     if (remainingQuestions.length === 0) {
       // Generate final profile with AI suggestions
-      const finalProfile = generateAIProfile(updatedProfile);
-      setTimeout(() => onComplete(finalProfile), 1000);
+      setAiThinking(true);
+      setTimeout(() => {
+        const finalProfile = generateAIProfile(updatedProfile);
+        onComplete(finalProfile);
+      }, 2000);
     } else {
-      simulateTyping();
-      setTimeout(() => setCurrentStep(currentStep + 1), 1500);
+      simulateAIProcessing();
+      setTimeout(() => setCurrentStep(currentStep + 1), 2500);
     }
   };
 
@@ -320,15 +341,23 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
           const artists = profile.favoriteArtists.join(', ').toLowerCase();
           if (artists.includes('billie eilish') || artists.includes('indie')) {
             suggestedTags.push('Indie Pop', 'Alternative');
+            behaviorPatterns.push('indie-music-lover');
           }
           if (artists.includes('coldplay')) {
             suggestedTags.push('Stadium Rock', 'Anthemic');
+            behaviorPatterns.push('mainstream-rock-fan');
           }
           if (artists.includes('bad bunny') || artists.includes('reggaeton')) {
             suggestedTags.push('Latin Music', 'Reggaeton', 'Spanish');
+            behaviorPatterns.push('latin-music-enthusiast');
           }
           if (artists.includes('electronic') || artists.includes('edm')) {
             suggestedTags.push('Electronic', 'Dance Music', 'Nightlife');
+            behaviorPatterns.push('electronic-music-fan');
+          }
+          if (artists.includes('jazz')) {
+            suggestedTags.push('Jazz', 'Sophisticated', 'Intimate Venues');
+            behaviorPatterns.push('jazz-aficionado');
           }
         }
       }
@@ -336,6 +365,11 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       if (profile.interests.includes('food-festivals')) {
         suggestedTags.push('Food & Drink', 'Culinary', 'Local Cuisine');
         behaviorPatterns.push('foodie');
+      }
+      
+      if (profile.interests.includes('nightlife')) {
+        suggestedTags.push('Nightlife', 'Parties', 'Social Events');
+        behaviorPatterns.push('nightlife-enthusiast');
       }
       
       if (profile.preferredVibe === 'chill-outdoor') {
@@ -348,9 +382,19 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         behaviorPatterns.push('energy-seeker');
       }
       
+      if (profile.preferredVibe === 'sophisticated') {
+        suggestedTags.push('Upscale', 'Elegant', 'Premium');
+        behaviorPatterns.push('sophistication-seeker');
+      }
+      
       if (profile.locationPreference === 'international') {
         suggestedTags.push('Destination Events', 'Travel', 'Cultural');
         behaviorPatterns.push('travel-enthusiast');
+      }
+
+      if (profile.purpose === 'explore-travel') {
+        suggestedTags.push('Travel Events', 'Destination', 'Adventure');
+        behaviorPatterns.push('travel-focused');
       }
 
     } else if (profile.userType === 'vendor') {
@@ -363,12 +407,25 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         suggestedTags.push('Cinematic', 'Aerial Photography');
         behaviorPatterns.push('tech-savvy-creative');
       }
+      if (profile.services?.includes('dj')) {
+        suggestedTags.push('Music Entertainment', 'Party Atmosphere');
+        behaviorPatterns.push('music-professional');
+      }
       if (profile.eventTypes?.includes('luxury-retreats')) {
         suggestedTags.push('Premium', 'Luxury Events');
         behaviorPatterns.push('luxury-specialist');
       }
+      if (profile.eventTypes?.includes('weddings')) {
+        suggestedTags.push('Wedding Specialist', 'Romantic Events');
+        behaviorPatterns.push('wedding-expert');
+      }
       if (profile.targetAudience?.toLowerCase().includes('natural light')) {
         suggestedTags.push('Natural Light Photography', 'Authentic Style');
+        behaviorPatterns.push('natural-style-specialist');
+      }
+      if (profile.targetAudience?.toLowerCase().includes('luxury')) {
+        suggestedTags.push('Luxury Services', 'High-End Events');
+        behaviorPatterns.push('luxury-focused');
       }
 
     } else if (profile.userType === 'organizer') {
@@ -381,12 +438,21 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         suggestedTags.push('Product Launch', 'Marketing Events');
         behaviorPatterns.push('marketing-savvy');
       }
+      if (profile.organizerEventTypes?.includes('tech-conferences')) {
+        suggestedTags.push('Technology Events', 'Innovation');
+        behaviorPatterns.push('tech-industry-focused');
+      }
       if (profile.vendorNeeds?.includes('av-equipment')) {
         suggestedTags.push('AV Production', 'Technical Events');
+        behaviorPatterns.push('tech-heavy-events');
       }
       if (profile.supportNeeds?.includes('ticketing')) {
         suggestedTags.push('Ticketed Events', 'Event Management');
         behaviorPatterns.push('tech-adopter');
+      }
+      if (profile.supportNeeds?.includes('analytics')) {
+        suggestedTags.push('Data-Driven', 'Performance Tracking');
+        behaviorPatterns.push('analytics-focused');
       }
     }
 
@@ -400,7 +466,8 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
           userType: profile.userType,
           primaryInterests: profile.interests?.slice(0, 3) || profile.services?.slice(0, 3) || profile.organizerEventTypes?.slice(0, 3),
           preferenceStrength: profile.aiTrainingData.responses.length >= 4 ? 'high' : 'medium',
-          completionRate: (profile.aiTrainingData.responses.length / 5) * 100
+          completionRate: (profile.aiTrainingData.responses.length / 5) * 100,
+          aiConfidence: profile.aiTrainingData.responses.reduce((avg, r) => avg + r.confidence, 0) / profile.aiTrainingData.responses.length
         }
       }
     };
@@ -452,14 +519,22 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         {/* Question */}
         <div className="p-6">
           <div className="mb-6">
-            {isTyping ? (
+            {aiThinking ? (
+              <div className="flex items-center space-x-3 p-4 bg-primary/5 rounded-xl">
+                <Brain className="w-6 h-6 text-primary animate-pulse" />
+                <div>
+                  <div className="font-medium text-secondary">AI is analyzing your responses...</div>
+                  <div className="text-sm text-charcoal">{currentQuestion.aiAnalysis}</div>
+                </div>
+              </div>
+            ) : isTyping ? (
               <div className="flex items-center space-x-2">
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
                   <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                   <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 </div>
-                <span className="text-charcoal">AI is thinking...</span>
+                <span className="text-charcoal">AI is preparing your next question...</span>
               </div>
             ) : (
               <h3 className="text-lg font-semibold text-secondary mb-2 leading-relaxed">
@@ -468,7 +543,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
             )}
           </div>
 
-          {!isTyping && (
+          {!isTyping && !aiThinking && (
             <div className="space-y-3">
               {currentQuestion.type === 'choice' && currentQuestion.options?.map((option) => (
                 <button
@@ -557,7 +632,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         {/* Footer */}
         <div className="px-6 py-4 bg-pearl border-t border-platinum">
           <div className="flex items-center justify-center text-sm text-charcoal">
-            <Sparkles className="w-4 h-4 mr-2" />
+            <Brain className="w-4 h-4 mr-2" />
             AI is learning your preferences to create personalized recommendations
           </div>
         </div>
