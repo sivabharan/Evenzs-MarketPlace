@@ -21,6 +21,7 @@ import { CustomerDashboard } from './pages/CustomerDashboard';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { Support } from './pages/Support';
+import { OnboardingDemo } from './pages/OnboardingDemo';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/onboarding-demo" element={<OnboardingDemo />} />
           </Routes>
         </Layout>
       </Router>
