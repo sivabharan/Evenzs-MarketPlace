@@ -74,7 +74,7 @@ export const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary via-charcoal to-charcoal-light flex items-center justify-center p-4">
+    <div className="min-h-screen bg-midnight-gradient flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         {/* Demo Credentials Helper */}
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 mb-6 border border-primary/20">
@@ -108,7 +108,7 @@ export const SignIn: React.FC = () => {
               onClick={() => setActiveTab('customer')}
               className={`flex items-center justify-center space-x-2 py-4 px-4 rounded-xl transition-all duration-300 ${
                 activeTab === 'customer'
-                  ? 'bg-primary text-secondary shadow-lg transform scale-105 animate-gold-glow'
+                  ? 'bg-primary text-white shadow-lg transform scale-105 animate-coral-glow'
                   : 'text-white hover:bg-white/20'
               }`}
             >
@@ -119,7 +119,7 @@ export const SignIn: React.FC = () => {
               onClick={() => setActiveTab('organizer')}
               className={`flex items-center justify-center space-x-2 py-4 px-4 rounded-xl transition-all duration-300 ${
                 activeTab === 'organizer'
-                  ? 'bg-primary text-secondary shadow-lg transform scale-105 animate-gold-glow'
+                  ? 'bg-primary text-white shadow-lg transform scale-105 animate-coral-glow'
                   : 'text-white hover:bg-white/20'
               }`}
             >
@@ -130,7 +130,7 @@ export const SignIn: React.FC = () => {
               onClick={() => setActiveTab('vendor')}
               className={`flex items-center justify-center space-x-2 py-4 px-4 rounded-xl transition-all duration-300 ${
                 activeTab === 'vendor'
-                  ? 'bg-primary text-secondary shadow-lg transform scale-105 animate-gold-glow'
+                  ? 'bg-primary text-white shadow-lg transform scale-105 animate-coral-glow'
                   : 'text-white hover:bg-white/20'
               }`}
             >
@@ -143,19 +143,19 @@ export const SignIn: React.FC = () => {
         {/* Sign In Form */}
         <div className="bg-white rounded-3xl shadow-2xl p-8">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-sunset-gradient rounded-2xl mb-4">
               {activeTab === 'customer' ? (
-                <Ticket className="w-8 h-8 text-secondary" />
+                <Ticket className="w-8 h-8 text-white" />
               ) : activeTab === 'organizer' ? (
-                <Calendar className="w-8 h-8 text-secondary" />
+                <Calendar className="w-8 h-8 text-white" />
               ) : (
-                <Users className="w-8 h-8 text-secondary" />
+                <Users className="w-8 h-8 text-white" />
               )}
             </div>
-            <h2 className="text-3xl font-bold text-secondary mb-2">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
               {isSignUp ? 'Join' : 'Welcome'} {activeTab === 'customer' ? 'Customer' : activeTab === 'organizer' ? 'Organizer' : 'Vendor'}!
             </h2>
-            <p className="text-charcoal">
+            <p className="text-gray-700">
               {isSignUp ? 'Create your account to get started' : 'Sign in to your account'}
             </p>
           </div>
@@ -169,7 +169,7 @@ export const SignIn: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {isSignUp && (
               <div>
-                <label className="block text-sm font-medium text-charcoal mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name
                 </label>
                 <input
@@ -177,47 +177,47 @@ export const SignIn: React.FC = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required={isSignUp}
-                  className="w-full px-4 py-3 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-neutral rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                   placeholder="Enter your full name"
                 />
               </div>
             )}
 
             <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-charcoal w-5 h-5" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-700 w-5 h-5" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-11 pr-4 py-3 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  className="w-full pl-11 pr-4 py-3 border border-neutral rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                   placeholder="Enter your email"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-charcoal mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-charcoal w-5 h-5" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-700 w-5 h-5" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full pl-11 pr-11 py-3 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  className="w-full pl-11 pr-11 py-3 border border-neutral rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                   placeholder="Enter your password"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-charcoal hover:text-primary"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-700 hover:text-primary"
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
@@ -226,14 +226,14 @@ export const SignIn: React.FC = () => {
 
             {isSignUp && (activeTab === 'organizer' || activeTab === 'vendor') && (
               <div>
-                <label className="block text-sm font-medium text-charcoal mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-2">
                   {activeTab === 'organizer' ? 'Company/Organization' : 'Business Name'}
                 </label>
                 <input
                   type="text"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
-                  className="w-full px-4 py-3 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-neutral rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                   placeholder={activeTab === 'organizer' ? 'Optional' : 'Your business name'}
                 />
               </div>
@@ -242,7 +242,7 @@ export const SignIn: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 animate-gold-glow"
+              className="w-full bg-sunset-gradient hover:shadow-coral-glow text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 animate-coral-glow"
             >
               {loading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
@@ -259,15 +259,15 @@ export const SignIn: React.FC = () => {
           <div className="mt-8">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-platinum" />
+                <div className="w-full border-t border-neutral" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-charcoal">Or continue with</span>
+                <span className="px-2 bg-white text-gray-700">Or continue with</span>
               </div>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-3">
-              <button className="w-full inline-flex justify-center py-3 px-4 border border-platinum rounded-xl shadow-sm bg-white text-sm font-medium text-charcoal hover:bg-pearl transition-colors">
+              <button className="w-full inline-flex justify-center py-3 px-4 border border-neutral rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-neutral transition-colors">
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -277,7 +277,7 @@ export const SignIn: React.FC = () => {
                 <span className="ml-2">Google</span>
               </button>
 
-              <button className="w-full inline-flex justify-center py-3 px-4 border border-platinum rounded-xl shadow-sm bg-white text-sm font-medium text-charcoal hover:bg-pearl transition-colors">
+              <button className="w-full inline-flex justify-center py-3 px-4 border border-neutral rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-neutral transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
@@ -290,7 +290,7 @@ export const SignIn: React.FC = () => {
           <div className="text-center mt-8">
             <button
               onClick={() => setIsSignUp(!isSignUp)}
-              className="text-primary hover:text-gold-dark font-medium transition-colors"
+              className="text-primary hover:text-coral-dark font-medium transition-colors"
             >
               {isSignUp 
                 ? 'Already have an account? Sign in' 

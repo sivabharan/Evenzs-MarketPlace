@@ -161,20 +161,20 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto animate-mobile-safe">
         {/* Header */}
         <div className="text-center p-6 sm:p-8 bg-gradient-to-br from-primary/10 to-accent/10">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-gold-glow">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-sunset-gradient rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-coral-glow">
             <Bot className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-secondary mb-2 flex items-center justify-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 flex items-center justify-center">
             AI Profile Complete!
             <Zap className="w-5 h-5 sm:w-6 sm:h-6 ml-2 text-primary" />
           </h2>
-          <p className="text-base sm:text-lg text-charcoal">Your intelligent recommendations are ready</p>
+          <p className="text-base sm:text-lg text-gray-700">Your intelligent recommendations are ready</p>
         </div>
 
         {/* AI Profile Summary */}
-        <div className="p-4 sm:p-6 border-b border-platinum">
-          <div className="bg-pearl rounded-xl p-3 sm:p-4 mb-4">
-            <h3 className="font-semibold text-secondary mb-2 flex items-center text-sm sm:text-base">
+        <div className="p-4 sm:p-6 border-b border-neutral">
+          <div className="bg-neutral rounded-xl p-3 sm:p-4 mb-4">
+            <h3 className="font-semibold text-gray-900 mb-2 flex items-center text-sm sm:text-base">
               <Target className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary" />
               Your AI-Generated Profile:
             </h3>
@@ -189,20 +189,20 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
                 {Math.round((profile.aiTrainingData.preferences.aiConfidence || 0.9) * 100)}% Match
               </span>
             </div>
-            <p className="text-charcoal text-xs sm:text-sm leading-relaxed">
+            <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
               {getPersonalizedSummary()}
             </p>
           </div>
 
           {/* AI Insights */}
           <div className="mb-4">
-            <h4 className="font-medium text-secondary mb-2 flex items-center text-sm sm:text-base">
+            <h4 className="font-medium text-gray-900 mb-2 flex items-center text-sm sm:text-base">
               <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-primary" />
               AI Behavioral Insights:
             </h4>
             <div className="space-y-2">
               {getAIInsights().map((insight, index) => (
-                <div key={index} className="text-xs sm:text-sm text-charcoal bg-white/50 rounded-lg p-2">
+                <div key={index} className="text-xs sm:text-sm text-gray-700 bg-white/50 rounded-lg p-2">
                   {insight}
                 </div>
               ))}
@@ -212,7 +212,7 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
           {/* Suggested Tags */}
           {profile.suggestedTags.length > 0 && (
             <div>
-              <h4 className="font-medium text-secondary mb-2 flex items-center text-sm sm:text-base">
+              <h4 className="font-medium text-gray-900 mb-2 flex items-center text-sm sm:text-base">
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-primary" />
                 AI-Generated Recommendation Tags:
               </h4>
@@ -228,19 +228,19 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
         </div>
 
         {/* Training Data Preview */}
-        <div className="p-4 sm:p-6 border-b border-platinum">
-          <h4 className="font-medium text-secondary mb-3 flex items-center text-sm sm:text-base">
+        <div className="p-4 sm:p-6 border-b border-neutral">
+          <h4 className="font-medium text-gray-900 mb-3 flex items-center text-sm sm:text-base">
             <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 mr-2 text-primary" />
             AI Training Data Generated:
           </h4>
-          <div className="bg-charcoal rounded-lg p-3 sm:p-4 text-green-400 font-mono text-xs overflow-x-auto">
+          <div className="bg-gray-900 rounded-lg p-3 sm:p-4 text-green-400 font-mono text-xs overflow-x-auto">
             <pre className="whitespace-pre-wrap break-words">{JSON.stringify(generateTrainingData(), null, 2)}</pre>
           </div>
         </div>
 
         {/* What's Next */}
         <div className="p-4 sm:p-6">
-          <h3 className="text-lg sm:text-xl font-bold text-secondary mb-4 flex items-center">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 flex items-center">
             <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary" />
             Your Personalized Experience:
           </h3>
@@ -251,7 +251,7 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
                 <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-primary text-xs sm:text-sm font-bold">{index + 1}</span>
                 </div>
-                <span className="text-charcoal text-sm sm:text-base">{recommendation}</span>
+                <span className="text-gray-700 text-sm sm:text-base">{recommendation}</span>
               </div>
             ))}
           </div>
@@ -260,7 +260,7 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
           <div className="space-y-3">
             <button
               onClick={onGetStarted}
-              className="w-full bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center animate-gold-glow text-sm sm:text-base"
+              className="w-full bg-sunset-gradient hover:shadow-coral-glow text-white py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center animate-coral-glow text-sm sm:text-base"
             >
               <Bot className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               <span>Start My AI-Powered Experience</span>
@@ -270,11 +270,11 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
             <div className="grid grid-cols-2 gap-3">
               {profile.userType === 'customer' && (
                 <>
-                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-secondary rounded-xl font-medium transition-colors text-xs sm:text-sm">
+                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-white rounded-xl font-medium transition-colors text-xs sm:text-sm">
                     <Calendar className="w-4 h-4 mr-1 sm:mr-2" />
                     Browse Events
                   </button>
-                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-secondary rounded-xl font-medium transition-colors text-xs sm:text-sm">
+                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-white rounded-xl font-medium transition-colors text-xs sm:text-sm">
                     <Music className="w-4 h-4 mr-1 sm:mr-2" />
                     Find Concerts
                   </button>
@@ -283,11 +283,11 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
               
               {profile.userType === 'organizer' && (
                 <>
-                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-secondary rounded-xl font-medium transition-colors text-xs sm:text-sm">
+                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-white rounded-xl font-medium transition-colors text-xs sm:text-sm">
                     <Users className="w-4 h-4 mr-1 sm:mr-2" />
                     Find Vendors
                   </button>
-                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-secondary rounded-xl font-medium transition-colors text-xs sm:text-sm">
+                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-white rounded-xl font-medium transition-colors text-xs sm:text-sm">
                     <Calendar className="w-4 h-4 mr-1 sm:mr-2" />
                     Plan Event
                   </button>
@@ -296,11 +296,11 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
               
               {profile.userType === 'vendor' && (
                 <>
-                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-secondary rounded-xl font-medium transition-colors text-xs sm:text-sm">
+                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-white rounded-xl font-medium transition-colors text-xs sm:text-sm">
                     <Users className="w-4 h-4 mr-1 sm:mr-2" />
                     Create Profile
                   </button>
-                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-secondary rounded-xl font-medium transition-colors text-xs sm:text-sm">
+                  <button className="flex items-center justify-center py-2 sm:py-3 px-3 sm:px-4 border border-primary text-primary hover:bg-primary hover:text-white rounded-xl font-medium transition-colors text-xs sm:text-sm">
                     <MapPin className="w-4 h-4 mr-1 sm:mr-2" />
                     Find Opportunities
                   </button>
@@ -311,8 +311,8 @@ export const AIOnboardingComplete: React.FC<AIOnboardingCompleteProps> = ({ prof
         </div>
 
         {/* Footer */}
-        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-pearl border-t border-platinum text-center">
-          <p className="text-xs sm:text-sm text-charcoal flex items-center justify-center">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-neutral border-t border-neutral-dark text-center">
+          <p className="text-xs sm:text-sm text-gray-700 flex items-center justify-center">
             <Bot className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             AI will continue learning your preferences to improve recommendations
           </p>
