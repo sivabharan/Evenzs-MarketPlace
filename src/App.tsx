@@ -22,6 +22,7 @@ import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { Support } from './pages/Support';
 import { OnboardingDemo } from './pages/OnboardingDemo';
+import { AIOnboardingDemo } from './pages/AIOnboardingDemo';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/support" element={<Support />} />
             <Route path="/onboarding-demo" element={<OnboardingDemo />} />
+            <Route path="/ai-onboarding-demo" element={<AIOnboardingDemo />} />
           </Routes>
         </Layout>
       </Router>
