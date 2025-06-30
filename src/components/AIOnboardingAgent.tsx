@@ -281,7 +281,12 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       if (question.id === 'userType') continue;
       
       // Check if this question has already been answered
-      if (userProfile.hasOwnProperty(question.id)) continue;
+      const hasAnswer = userProfile.hasOwnProperty(question.id) && 
+                       userProfile[question.id as keyof UserProfile] !== null && 
+                       userProfile[question.id as keyof UserProfile] !== undefined &&
+                       userProfile[question.id as keyof UserProfile] !== '';
+      
+      if (hasAnswer) continue;
       
       // Check if the question's condition is met (if it has one)
       if (question.condition && !question.condition(userProfile)) continue;
@@ -329,9 +334,26 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
     setUserProfile(updatedProfile);
 
     // Check if we have more questions
-    const nextQuestion = getCurrentQuestion();
+    const tempProfile = { ...updatedProfile };
+    let hasMoreQuestions = false;
     
-    if (!nextQuestion) {
+    for (const question of questions) {
+      if (question.id === 'userType') continue;
+      
+      const hasAnswer = tempProfile.hasOwnProperty(question.id) && 
+                       tempProfile[question.id as keyof UserProfile] !== null && 
+                       tempProfile[question.id as keyof UserProfile] !== undefined &&
+                       tempProfile[question.id as keyof UserProfile] !== '';
+      
+      if (hasAnswer) continue;
+      
+      if (question.condition && !question.condition(tempProfile)) continue;
+      
+      hasMoreQuestions = true;
+      break;
+    }
+    
+    if (!hasMoreQuestions) {
       // No more questions, generate final profile
       setAiThinking(true);
       setTimeout(() => {
@@ -496,7 +518,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
   }
 
   const getQuestionNumber = () => {
-    return profile.aiTrainingData.responses.length + 1;
+    return userProfile.aiTrainingData.responses.length + 1;
   };
 
   return (
