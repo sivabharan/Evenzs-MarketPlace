@@ -33,6 +33,12 @@ export default {
         'ivory': '#FFFFF0',        // Ivory
         'cream': '#F5F5DC',        // Cream
         'smoke': '#F5F5F5',        // Light Smoke
+        
+        // Additional colors for compatibility
+        'purple-light': '#9333EA',
+        'purple-dark': '#7C3AED',
+        'coral-dark': '#DC2626',
+        'gold': '#D4AF37',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -59,6 +65,7 @@ export default {
       },
       minHeight: {
         'screen-safe': 'calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))',
+        'screen-mobile': '100vh',
         'dvh': '100dvh',
       },
       maxHeight: {
