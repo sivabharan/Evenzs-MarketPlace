@@ -37,7 +37,13 @@ export const AIOnboardingDemo: React.FC = () => {
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [showTrainingData, setShowTrainingData] = useState(false);
 
+  const handleStartOnboarding = () => {
+    console.log('🤖 Starting AI Onboarding Demo...');
+    setShowOnboarding(true);
+  };
+
   const handleOnboardingComplete = (profile: UserProfile) => {
+    console.log('✅ AI Onboarding Complete:', profile);
     setUserProfile(profile);
     setShowOnboarding(false);
     setShowComplete(true);
@@ -47,6 +53,11 @@ export const AIOnboardingDemo: React.FC = () => {
     setShowComplete(false);
     // In a real app, this would navigate to the appropriate dashboard
     alert('🤖 Welcome to your AI-powered Evenzs experience! Your personalized recommendations are now active.');
+  };
+
+  const handleCloseOnboarding = () => {
+    console.log('❌ AI Onboarding Closed');
+    setShowOnboarding(false);
   };
 
   // Mock AI training data from previous users
@@ -242,13 +253,16 @@ export const AIOnboardingDemo: React.FC = () => {
 
           <div className="text-center">
             <button
-              onClick={() => setShowOnboarding(true)}
-              className="bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow flex items-center mx-auto"
+              onClick={handleStartOnboarding}
+              type="button"
+              className="bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow flex items-center mx-auto cursor-pointer"
+              style={{ cursor: 'pointer' }}
             >
               <Bot className="w-6 h-6 mr-2" />
               Experience AI Onboarding
               <Zap className="w-5 h-5 ml-2" />
             </button>
+            <p className="text-sm text-charcoal mt-2">Click to start the interactive AI onboarding demo</p>
           </div>
         </div>
 
@@ -540,13 +554,35 @@ export const AIOnboardingDemo: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Debug Information */}
+        <div className="mt-8 bg-charcoal rounded-2xl p-6 text-white">
+          <h3 className="text-lg font-bold mb-4 flex items-center">
+            <Bot className="w-5 h-5 mr-2 text-primary" />
+            Debug Information
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <div className="text-green-400">✅ AI Onboarding State:</div>
+              <div>Show Onboarding: {showOnboarding ? 'true' : 'false'}</div>
+              <div>Show Complete: {showComplete ? 'true' : 'false'}</div>
+              <div>User Profile: {userProfile ? 'loaded' : 'null'}</div>
+            </div>
+            <div>
+              <div className="text-blue-400">🔧 Component Status:</div>
+              <div>AIOnboardingAgent: {showOnboarding ? 'mounted' : 'unmounted'}</div>
+              <div>AIOnboardingComplete: {showComplete ? 'mounted' : 'unmounted'}</div>
+              <div>Button Handler: handleStartOnboarding</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* AI Onboarding Agent */}
       {showOnboarding && (
         <AIOnboardingAgent
           onComplete={handleOnboardingComplete}
-          onClose={() => setShowOnboarding(false)}
+          onClose={handleCloseOnboarding}
         />
       )}
 
