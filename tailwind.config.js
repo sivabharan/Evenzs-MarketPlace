@@ -11,6 +11,7 @@ export default {
         background: '#FAFAF9',     // Warm Off-White
         
         // Extended gold palette
+        'gold': '#D4AF37',         // Same as primary for consistency
         'gold-light': '#F4E4BC',   // Light Champagne
         'gold-dark': '#B8860B',    // Dark Goldenrod
         'gold-elegant': '#DAA520', // Goldenrod
@@ -34,11 +35,52 @@ export default {
         'cream': '#F5F5DC',        // Cream
         'smoke': '#F5F5F5',        // Light Smoke
         
-        // Additional colors for compatibility
+        // Purple variants (used in components)
         'purple-light': '#9333EA',
         'purple-dark': '#7C3AED',
+        
+        // Coral variants (used in components)
+        'coral': '#FF6B6B',
         'coral-dark': '#DC2626',
-        'gold': '#D4AF37',
+        
+        // Additional utility colors
+        'gray': {
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
+        },
+        'green': {
+          100: '#DCFCE7',
+          500: '#22C55E',
+          600: '#16A34A',
+          800: '#166534',
+        },
+        'blue': {
+          100: '#DBEAFE',
+          500: '#3B82F6',
+          600: '#2563EB',
+          800: '#1E40AF',
+        },
+        'red': {
+          50: '#FEF2F2',
+          100: '#FEE2E2',
+          500: '#EF4444',
+          600: '#DC2626',
+          700: '#B91C1C',
+        },
+        'yellow': {
+          400: '#FACC15',
+        },
+        'pink': {
+          500: '#EC4899',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
