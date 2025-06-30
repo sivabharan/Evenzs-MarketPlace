@@ -4,35 +4,39 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Elegant Professional Party Palette - High Contrast & Visibility
-        primary: '#8B5CF6',        // Rich Purple (Main brand)
-        secondary: '#1F2937',      // Dark Slate (Professional)
-        accent: '#F59E0B',         // Warm Amber (Celebration)
-        background: '#F9FAFB',     // Clean Light Grey
+        // Dark Grey & Metallic Gold Elegant Professional Party Palette
+        primary: '#D4AF37',        // Rich Metallic Gold (Main brand)
+        secondary: '#1A1A1A',      // Deep Charcoal (Professional)
+        accent: '#F7D794',         // Champagne Gold (Celebration)
+        background: '#FAFAF9',     // Warm Off-White
         
-        // Extended elegant palette
-        'purple-light': '#A78BFA', // Light Purple
-        'purple-dark': '#7C3AED',  // Dark Purple
-        'amber-light': '#FCD34D',  // Light Amber
-        'amber-dark': '#D97706',   // Dark Amber
-        'gold': '#F59E0B',         // Gold
-        'gold-light': '#FCD34D',   // Light Gold
-        'gold-dark': '#D97706',    // Dark Gold
+        // Extended metallic gold palette
+        'gold': '#D4AF37',         // Rich Gold
+        'gold-light': '#F4E4BC',   // Light Champagne
+        'gold-dark': '#B8860B',    // Dark Goldenrod
+        'gold-elegant': '#DAA520', // Goldenrod
+        'champagne': '#F7E7CE',    // Soft Champagne
+        'metallic-gold': '#FFD700', // Bright Metallic Gold
         
-        // Professional greys with high contrast
-        'charcoal': '#374151',     // Medium Grey
-        'charcoal-light': '#6B7280', // Light Grey
-        'slate': '#1E293B',        // Dark Slate
-        'pearl': '#F3F4F6',        // Very Light Grey
-        'platinum': '#E5E7EB',     // Light Border Grey
+        // Professional dark grey palette with high contrast
+        'charcoal': '#2D2D2D',     // Medium Charcoal
+        'charcoal-light': '#404040', // Light Charcoal
+        'charcoal-dark': '#0D0D0D', // Almost Black
+        'slate-warm': '#3A3A3A',   // Warm Slate
         
-        // Party accent colors
-        'coral': '#EF4444',        // Coral Red
-        'coral-dark': '#DC2626',   // Dark Coral
-        'emerald': '#10B981',      // Emerald Green
-        'sky': '#0EA5E9',          // Sky Blue
+        // Elegant party accents
+        'rose-gold': '#E8B4B8',    // Rose Gold
+        'bronze': '#CD7F32',       // Bronze
+        'copper': '#B87333',       // Copper
+        'platinum': '#E5E4E2',     // Platinum
         
-        // Standard colors for consistency
+        // High contrast neutrals for perfect visibility
+        'pearl': '#F8F6F0',        // Warm Pearl
+        'ivory': '#FFFFF0',        // Ivory
+        'cream': '#F5F5DC',        // Cream
+        'smoke': '#F5F5F5',        // Light Smoke
+        
+        // Standard colors for consistency and visibility
         'white': '#FFFFFF',
         'black': '#000000',
         'gray': {
@@ -66,6 +70,16 @@ export default {
           500: '#EF4444',
           600: '#DC2626',
           700: '#B91C1C',
+        },
+        'purple': {
+          500: '#8B5CF6',
+          600: '#7C3AED',
+        },
+        'emerald': {
+          500: '#10B981',
+        },
+        'orange': {
+          500: '#F97316',
         },
       },
       fontFamily: {
@@ -137,8 +151,8 @@ export default {
           '100%': { transform: 'translateX(100%)' },
         },
         'gold-glow': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(139, 92, 246, 0.5)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.5)' },
         },
         'mobile-safe': {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
