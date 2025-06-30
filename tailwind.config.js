@@ -4,83 +4,111 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark Grey & Metallic Gold Elegant Professional Party Palette
-        primary: '#D4AF37',        // Rich Metallic Gold (Main brand)
-        secondary: '#1A1A1A',      // Deep Charcoal (Professional)
-        accent: '#F7D794',         // Champagne Gold (Celebration)
-        background: '#FAFAF9',     // Warm Off-White
+        // Evenzs Brand Colors - Coral Pink & Mango Orange
+        evenzs: {
+          primary: '#FF4F6A',         // Coral Pink
+          secondary: '#FFA533',       // Mango Orange
+          accent: '#1E2A38',          // Midnight Blue
+          neutral: '#F4F5F7',         // Mist Gray
+          white: '#FFFFFF',           // Base White
+          success: '#3CC179',         // Fresh Green
+          error: '#F44336',           // Alert Red
+          info: '#4AB0FF',            // Sky Blue
+          tag: '#B28DFF',             // Lilac Purple
+        },
         
-        // Extended metallic gold palette
-        'gold': '#D4AF37',         // Rich Gold
-        'gold-light': '#F4E4BC',   // Light Champagne
-        'gold-dark': '#B8860B',    // Dark Goldenrod
-        'gold-elegant': '#DAA520', // Goldenrod
-        'champagne': '#F7E7CE',    // Soft Champagne
-        'metallic-gold': '#FFD700', // Bright Metallic Gold
+        // Primary brand colors (mapped to evenzs for consistency)
+        primary: '#FF4F6A',           // Coral Pink
+        secondary: '#1E2A38',         // Midnight Blue
+        accent: '#FFA533',            // Mango Orange
+        background: '#FFFFFF',        // Clean White Background
         
-        // Professional dark grey palette with high contrast
-        'charcoal': '#2D2D2D',     // Medium Charcoal
-        'charcoal-light': '#404040', // Light Charcoal
-        'charcoal-dark': '#0D0D0D', // Almost Black
-        'slate-warm': '#3A3A3A',   // Warm Slate
+        // Extended coral palette
+        'coral': '#FF4F6A',           // Main Coral
+        'coral-light': '#FF7A8A',     // Light Coral
+        'coral-dark': '#E63946',      // Dark Coral
+        'coral-soft': '#FFB3C1',      // Soft Coral
         
-        // Elegant party accents
-        'rose-gold': '#E8B4B8',    // Rose Gold
-        'bronze': '#CD7F32',       // Bronze
-        'copper': '#B87333',       // Copper
-        'platinum': '#E5E4E2',     // Platinum
+        // Extended mango palette
+        'mango': '#FFA533',           // Main Mango
+        'mango-light': '#FFB85C',     // Light Mango
+        'mango-dark': '#E6941A',      // Dark Mango
+        'mango-soft': '#FFCC80',      // Soft Mango
         
-        // High contrast neutrals for perfect visibility
-        'pearl': '#F8F6F0',        // Warm Pearl
-        'ivory': '#FFFFF0',        // Ivory
-        'cream': '#F5F5DC',        // Cream
-        'smoke': '#F5F5F5',        // Light Smoke
+        // Midnight blue variations
+        'midnight': '#1E2A38',        // Main Midnight
+        'midnight-light': '#2D3E50',  // Light Midnight
+        'midnight-dark': '#0F1419',   // Dark Midnight
+        'midnight-soft': '#4A5568',   // Soft Midnight
         
-        // Standard colors for consistency and visibility
+        // Neutral grays
+        'neutral': '#F4F5F7',         // Mist Gray
+        'neutral-light': '#F8F9FA',   // Light Mist
+        'neutral-dark': '#E2E8F0',    // Dark Mist
+        
+        // Supporting colors
+        'success': '#3CC179',         // Fresh Green
+        'error': '#F44336',           // Alert Red
+        'info': '#4AB0FF',            // Sky Blue
+        'tag': '#B28DFF',             // Lilac Purple
+        
+        // Standard colors for consistency
         'white': '#FFFFFF',
         'black': '#000000',
         'gray': {
-          50: '#F9FAFB',
-          100: '#F3F4F6',
-          200: '#E5E7EB',
-          300: '#D1D5DB',
-          400: '#9CA3AF',
-          500: '#6B7280',
-          600: '#4B5563',
-          700: '#374151',
-          800: '#1F2937',
-          900: '#111827',
+          50: '#F8F9FA',
+          100: '#F4F5F7',
+          200: '#E2E8F0',
+          300: '#CBD5E0',
+          400: '#A0AEC0',
+          500: '#718096',
+          600: '#4A5568',
+          700: '#2D3748',
+          800: '#1A202C',
+          900: '#171923',
         },
         'green': {
-          100: '#DCFCE7',
-          500: '#22C55E',
+          100: '#F0FDF4',
+          500: '#3CC179',
           600: '#16A34A',
           800: '#166534',
         },
         'blue': {
-          100: '#DBEAFE',
-          500: '#3B82F6',
+          100: '#EBF8FF',
+          500: '#4AB0FF',
           600: '#2563EB',
         },
         'yellow': {
-          400: '#FACC15',
+          400: '#FFA533',
         },
         'red': {
           50: '#FEF2F2',
-          500: '#EF4444',
+          500: '#F44336',
           600: '#DC2626',
           700: '#B91C1C',
         },
         'purple': {
-          500: '#8B5CF6',
+          500: '#B28DFF',
           600: '#7C3AED',
         },
         'emerald': {
-          500: '#10B981',
+          500: '#3CC179',
         },
         'orange': {
-          500: '#F97316',
+          500: '#FFA533',
         },
+      },
+      backgroundImage: {
+        'sunset-gradient': 'linear-gradient(90deg, #FF4F6A 0%, #FFA533 100%)',
+        'coral-gradient': 'linear-gradient(135deg, #FF4F6A 0%, #FF7A8A 100%)',
+        'mango-gradient': 'linear-gradient(135deg, #FFA533 0%, #FFB85C 100%)',
+        'midnight-gradient': 'linear-gradient(135deg, #1E2A38 0%, #2D3E50 100%)',
+      },
+      boxShadow: {
+        card: '0 4px 12px rgba(30, 42, 56, 0.1)',
+        hover: '0 6px 20px rgba(255, 79, 106, 0.2)',
+        'coral-glow': '0 0 20px rgba(255, 79, 106, 0.3)',
+        'mango-glow': '0 0 20px rgba(255, 165, 51, 0.3)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -117,7 +145,8 @@ export default {
         'celebration': 'celebration 8s ease-in-out infinite',
         'elegant-float': 'elegant-float 5s ease-in-out infinite',
         'shimmer': 'shimmer 2s ease-in-out infinite',
-        'gold-glow': 'gold-glow 3s ease-in-out infinite',
+        'coral-glow': 'coral-glow 3s ease-in-out infinite',
+        'mango-glow': 'mango-glow 3s ease-in-out infinite',
         'mobile-safe': 'mobile-safe 0.3s ease-out',
       },
       keyframes: {
@@ -150,9 +179,13 @@ export default {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
         },
-        'gold-glow': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.5)' },
+        'coral-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(255, 79, 106, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(255, 79, 106, 0.5)' },
+        },
+        'mango-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(255, 165, 51, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(255, 165, 51, 0.5)' },
         },
         'mobile-safe': {
           '0%': { transform: 'scale(0.95)', opacity: '0' },

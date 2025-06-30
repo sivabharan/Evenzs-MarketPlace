@@ -525,9 +525,9 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto animate-mobile-safe">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-platinum">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-neutral">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center animate-gold-glow">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-sunset-gradient rounded-full flex items-center justify-center animate-coral-glow">
               <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
@@ -535,26 +535,26 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                 AI Assistant
                 <Zap className="w-3 h-3 sm:w-4 sm:h-4 ml-2 text-primary" />
               </h2>
-              <p className="text-xs sm:text-sm text-charcoal">Powered by intelligent recommendations</p>
+              <p className="text-xs sm:text-sm text-gray-700">Powered by intelligent recommendations</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-charcoal hover:text-primary transition-colors"
+            className="p-2 text-gray-700 hover:text-primary transition-colors"
           >
             <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 
         {/* Progress */}
-        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-pearl">
-          <div className="flex items-center justify-between text-xs sm:text-sm text-charcoal mb-2">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-neutral">
+          <div className="flex items-center justify-between text-xs sm:text-sm text-gray-700 mb-2">
             <span>Question {getQuestionNumber()}</span>
             <span>{Math.round((getQuestionNumber() / 5) * 100)}% Complete</span>
           </div>
-          <div className="w-full bg-platinum rounded-full h-2">
+          <div className="w-full bg-neutral-dark rounded-full h-2">
             <div 
-              className="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-300"
+              className="bg-sunset-gradient h-2 rounded-full transition-all duration-300"
               style={{ width: `${(getQuestionNumber() / 5) * 100}%` }}
             ></div>
           </div>
@@ -568,7 +568,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                 <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-primary animate-pulse" />
                 <div>
                   <div className="font-medium text-secondary text-sm sm:text-base">AI is analyzing your responses...</div>
-                  <div className="text-xs sm:text-sm text-charcoal">{currentQuestion.aiAnalysis}</div>
+                  <div className="text-xs sm:text-sm text-gray-700">{currentQuestion.aiAnalysis}</div>
                 </div>
               </div>
             ) : isTyping ? (
@@ -578,7 +578,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                   <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                   <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 </div>
-                <span className="text-charcoal text-sm sm:text-base">AI is preparing your next question...</span>
+                <span className="text-gray-700 text-sm sm:text-base">AI is preparing your next question...</span>
               </div>
             ) : (
               <h3 className="text-base sm:text-lg font-semibold text-secondary mb-2 leading-relaxed">
@@ -593,7 +593,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(currentQuestion.id, option.value)}
-                  className="w-full text-left p-3 sm:p-4 border border-platinum rounded-xl hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
+                  className="w-full text-left p-3 sm:p-4 border border-neutral rounded-xl hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
                 >
                   <div className="flex items-start space-x-3">
                     {option.icon && (
@@ -604,12 +604,12 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                         {option.label}
                       </div>
                       {option.description && (
-                        <div className="text-xs sm:text-sm text-charcoal mt-1">
+                        <div className="text-xs sm:text-sm text-gray-700 mt-1">
                           {option.description}
                         </div>
                       )}
                     </div>
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-charcoal group-hover:text-primary transition-colors flex-shrink-0" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 group-hover:text-primary transition-colors flex-shrink-0" />
                   </div>
                 </button>
               ))}
@@ -619,11 +619,11 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                   {currentQuestion.options?.map((option) => (
                     <label
                       key={option.value}
-                      className="flex items-center p-3 border border-platinum rounded-xl hover:bg-pearl transition-colors cursor-pointer"
+                      className="flex items-center p-3 border border-neutral rounded-xl hover:bg-neutral transition-colors cursor-pointer"
                     >
                       <input
                         type="checkbox"
-                        className="w-4 h-4 text-primary border-platinum rounded focus:ring-primary"
+                        className="w-4 h-4 text-primary border-neutral rounded focus:ring-primary"
                         onChange={(e) => {
                           const currentValues = userProfile[currentQuestion.id as keyof UserProfile] as string[] || [];
                           const newValues = e.target.checked
@@ -637,7 +637,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                   ))}
                   <button
                     onClick={() => handleAnswer(currentQuestion.id, userProfile[currentQuestion.id as keyof UserProfile] || [])}
-                    className="w-full mt-4 bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow text-sm sm:text-base"
+                    className="w-full mt-4 bg-sunset-gradient hover:shadow-coral-glow text-white py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-coral-glow text-sm sm:text-base"
                     disabled={!userProfile[currentQuestion.id as keyof UserProfile] || (userProfile[currentQuestion.id as keyof UserProfile] as string[])?.length === 0}
                   >
                     Continue
@@ -649,7 +649,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                 <div className="space-y-4">
                   <textarea
                     placeholder={currentQuestion.placeholder}
-                    className="w-full p-3 sm:p-4 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none text-sm sm:text-base"
+                    className="w-full p-3 sm:p-4 border border-neutral rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none text-sm sm:text-base"
                     rows={3}
                     onChange={(e) => {
                       const value = e.target.value;
@@ -663,7 +663,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                   />
                   <button
                     onClick={() => handleAnswer(currentQuestion.id, userProfile[currentQuestion.id as keyof UserProfile] || '')}
-                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow text-sm sm:text-base"
+                    className="w-full bg-sunset-gradient hover:shadow-coral-glow text-white py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-coral-glow text-sm sm:text-base"
                   >
                     Continue
                   </button>
@@ -674,8 +674,8 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         </div>
 
         {/* Footer */}
-        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-pearl border-t border-platinum">
-          <div className="flex items-center justify-center text-xs sm:text-sm text-charcoal">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-neutral border-t border-neutral-dark">
+          <div className="flex items-center justify-center text-xs sm:text-sm text-gray-700">
             <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             AI is learning your preferences to create personalized recommendations
           </div>
