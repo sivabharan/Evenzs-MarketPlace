@@ -10,7 +10,7 @@
     /* Smooth scrolling */
     scroll-behavior: smooth;
     /* Ensure background color is applied */
-    background-color: #FAFAF9; /* background color */
+    background-color: #FAFAF9 !important; /* background color */
   }
 
   body {
@@ -31,18 +31,7 @@
   #root {
     background-color: #FAFAF9 !important; /* background color */
     min-height: 100vh;
-    color: #2D2D2D; /* charcoal text */
-  }
-
-  /* Ensure all main containers use proper background */
-  .min-h-screen {
-    background-color: #FAFAF9; /* background color */
-  }
-
-  /* Header specific fixes */
-  header {
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(12px);
+    color: #2D2D2D !important; /* charcoal text */
   }
 
   /* Prevent zoom on form inputs on iOS */
@@ -93,11 +82,20 @@
 
   /* Force text colors */
   h1, h2, h3, h4, h5, h6 {
-    color: #1A1A1A; /* secondary color */
+    color: #1A1A1A !important; /* secondary color */
   }
 
   p {
-    color: #2D2D2D; /* charcoal color */
+    color: #2D2D2D !important; /* charcoal color */
+  }
+
+  /* Force link colors */
+  a {
+    color: #2D2D2D;
+  }
+
+  a:hover {
+    color: #D4AF37; /* primary color */
   }
 }
 
@@ -145,6 +143,11 @@
     background-color: #FAFAF9 !important;
   }
 
+  /* Force white background */
+  .bg-white {
+    background-color: #ffffff !important;
+  }
+
   /* Force text color utilities */
   .text-secondary {
     color: #1A1A1A !important;
@@ -158,6 +161,48 @@
     color: #D4AF37 !important;
   }
 
+  .text-accent {
+    color: #F7D794 !important;
+  }
+
+  .text-white {
+    color: #ffffff !important;
+  }
+
+  /* Force background utilities */
+  .bg-primary {
+    background-color: #D4AF37 !important;
+  }
+
+  .bg-secondary {
+    background-color: #1A1A1A !important;
+  }
+
+  .bg-accent {
+    background-color: #F7D794 !important;
+  }
+
+  .bg-charcoal {
+    background-color: #2D2D2D !important;
+  }
+
+  .bg-platinum {
+    background-color: #E5E4E2 !important;
+  }
+
+  .bg-pearl {
+    background-color: #F8F6F0 !important;
+  }
+
+  /* Border utilities */
+  .border-platinum {
+    border-color: #E5E4E2 !important;
+  }
+
+  .border-primary {
+    border-color: #D4AF37 !important;
+  }
+
   /* Mobile-optimized animations */
   @media (prefers-reduced-motion: reduce) {
     .animate-gold-glow,
@@ -166,7 +211,8 @@
     .animate-sparkle,
     .animate-celebration,
     .animate-elegant-float,
-    .animate-shimmer {
+    .animate-shimmer,
+    .animate-mobile-safe {
       animation: none;
     }
   }
@@ -174,30 +220,30 @@
   /* High contrast mode support */
   @media (prefers-contrast: high) {
     .bg-primary {
-      background-color: #000000;
+      background-color: #000000 !important;
     }
     
     .text-primary {
-      color: #000000;
+      color: #000000 !important;
     }
     
     .border-primary {
-      border-color: #000000;
+      border-color: #000000 !important;
     }
   }
 
   /* Dark mode support for system preference */
   @media (prefers-color-scheme: dark) {
     .bg-background {
-      background-color: #1a1a1a;
+      background-color: #1a1a1a !important;
     }
     
     .text-secondary {
-      color: #ffffff;
+      color: #ffffff !important;
     }
     
     .text-charcoal {
-      color: #e5e5e5;
+      color: #e5e5e5 !important;
     }
   }
 }

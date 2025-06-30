@@ -20,7 +20,7 @@ import {
 
 export const Home: React.FC = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-background">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary via-charcoal to-charcoal-light min-h-screen-mobile flex items-center">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10"></div>
