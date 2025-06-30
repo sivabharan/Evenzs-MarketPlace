@@ -4,22 +4,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1E293B',        // Professional Slate Gray
-        accent: '#0F172A',         // Deep Charcoal
-        gold: '#D97706',           // Sophisticated Amber
-        secondary: '#475569',      // Medium Slate
-        background: '#FEFEFE',     // Pure White
-        'primary-light': '#334155',
-        'primary-dark': '#0F172A',
-        'accent-light': '#1E293B',
-        'accent-dark': '#020617',
-        'gold-light': '#F59E0B',
-        'gold-dark': '#B45309',
-        'secondary-light': '#64748B',
-        'secondary-dark': '#334155',
-        'elegant-gray': '#F8FAFC',
-        'professional-blue': '#1E40AF',
-        'celebration-accent': '#DC2626',
+        // Gold & Dark Grey Elegant Party Color Palette
+        primary: '#D4AF37',        // Rich Gold (Main brand)
+        secondary: '#1A1A1A',      // Deep Charcoal (Professional)
+        accent: '#F7D794',         // Champagne Gold (Celebration)
+        background: '#FAFAF9',     // Warm Off-White
+        
+        // Extended gold palette
+        'gold-light': '#F4E4BC',   // Light Champagne
+        'gold-dark': '#B8860B',    // Dark Goldenrod
+        'gold-elegant': '#DAA520', // Goldenrod
+        'champagne': '#F7E7CE',    // Soft Champagne
+        
+        // Extended dark grey palette
+        'charcoal': '#2D2D2D',     // Medium Charcoal
+        'charcoal-light': '#404040', // Light Charcoal
+        'charcoal-dark': '#0D0D0D', // Almost Black
+        'slate-warm': '#3A3A3A',   // Warm Slate
+        
+        // Elegant party accents
+        'rose-gold': '#E8B4B8',    // Rose Gold
+        'bronze': '#CD7F32',       // Bronze
+        'copper': '#B87333',       // Copper
+        'platinum': '#E5E4E2',     // Platinum
+        
+        // Neutral sophistication
+        'pearl': '#F8F6F0',        // Warm Pearl
+        'ivory': '#FFFFF0',        // Ivory
+        'cream': '#F5F5DC',        // Cream
+        'smoke': '#F5F5F5',        // Light Smoke
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -28,62 +41,47 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 2s infinite',
-        'spin-slow': 'spin 20s linear infinite',
-        'sparkle': 'sparkle 2s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'elegant-float': 'elegantFloat 8s ease-in-out infinite',
-        'party-pulse': 'partyPulse 3s ease-in-out infinite',
-        'celebration': 'celebration 4s ease-in-out infinite',
+        'party-pulse': 'party-pulse 4s ease-in-out infinite',
+        'sparkle': 'sparkle 3s ease-in-out infinite',
+        'celebration': 'celebration 8s ease-in-out infinite',
+        'elegant-float': 'elegant-float 5s ease-in-out infinite',
+        'shimmer': 'shimmer 2s ease-in-out infinite',
+        'gold-glow': 'gold-glow 3s ease-in-out infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        'party-pulse': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.08' },
+          '50%': { transform: 'scale(1.05)', opacity: '0.12' },
+        },
         sparkle: {
-          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.2)' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 20px rgba(30, 41, 59, 0.3)' },
-          '100%': { boxShadow: '0 0 30px rgba(217, 119, 6, 0.4)' },
-        },
-        elegantFloat: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '33%': { transform: 'translateY(-8px) rotate(1deg)' },
-          '66%': { transform: 'translateY(-4px) rotate(-1deg)' },
-        },
-        partyPulse: {
-          '0%, 100%': { transform: 'scale(1)', opacity: '0.8' },
-          '50%': { transform: 'scale(1.05)', opacity: '1' },
+          '0%, 100%': { transform: 'rotate(0deg) scale(1)', opacity: '0.4' },
+          '25%': { transform: 'rotate(90deg) scale(1.1)', opacity: '0.6' },
+          '50%': { transform: 'rotate(180deg) scale(1)', opacity: '0.4' },
+          '75%': { transform: 'rotate(270deg) scale(1.1)', opacity: '0.6' },
         },
         celebration: {
-          '0%, 100%': { 
-            background: 'linear-gradient(135deg, #1E293B, #D97706)',
-            transform: 'scale(1)'
-          },
-          '25%': { 
-            background: 'linear-gradient(135deg, #D97706, #475569)',
-            transform: 'scale(1.02)'
-          },
-          '50%': { 
-            background: 'linear-gradient(135deg, #475569, #1E293B)',
-            transform: 'scale(1.05)'
-          },
-          '75%': { 
-            background: 'linear-gradient(135deg, #1E293B, #D97706)',
-            transform: 'scale(1.02)'
-          },
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)', opacity: '0.3' },
+          '25%': { transform: 'translateY(-5px) rotate(5deg)', opacity: '0.5' },
+          '50%': { transform: 'translateY(-2px) rotate(-3deg)', opacity: '0.4' },
+          '75%': { transform: 'translateY(-7px) rotate(2deg)', opacity: '0.6' },
         },
-      },
-      backgroundImage: {
-        'elegant-gradient': 'linear-gradient(135deg, #1E293B 0%, #475569 25%, #D97706 50%, #334155 75%, #1E293B 100%)',
-        'party-gradient': 'linear-gradient(45deg, #D97706, #1E293B, #475569)',
-        'celebration-gradient': 'linear-gradient(135deg, #1E293B, #D97706, #475569)',
-        'professional-gradient': 'linear-gradient(135deg, #F8FAFC, #FEFEFE)',
-      },
-      backdropBlur: {
-        'elegant': '20px',
+        'elegant-float': {
+          '0%, 100%': { transform: 'translateX(0px) translateY(0px)', opacity: '0.5' },
+          '33%': { transform: 'translateX(2px) translateY(-3px)', opacity: '0.7' },
+          '66%': { transform: 'translateX(-1px) translateY(-1px)', opacity: '0.6' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'gold-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.5)' },
+        },
       },
     },
   },
