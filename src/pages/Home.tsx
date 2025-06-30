@@ -20,7 +20,7 @@ import {
 
 export const Home: React.FC = () => {
   return (
-    <div className="overflow-hidden bg-background">
+    <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary via-charcoal to-charcoal-light min-h-screen-mobile flex items-center">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10"></div>
@@ -28,9 +28,7 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-white text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-                <span className="text-white">Make</span>{' '}
-                <span className="text-white">Every</span>{' '}
-                <span className="text-white">Event</span>
+                <span className="text-white">Make Every Event</span>
                 <span className="text-primary block animate-pulse-slow">Unforgettable</span>
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed">

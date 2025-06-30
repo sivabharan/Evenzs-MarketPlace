@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-charcoal mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-            <p className="text-gray-400">© 2024 evenzs. All rights reserved.</p>
+            <p className="text-gray-400">© 2025 evenzs. All rights reserved.</p>
             <a 
               href="https://bolt.new" 
               target="_blank" 

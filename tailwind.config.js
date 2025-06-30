@@ -157,5 +157,4 @@ export default {
     },
   },
   plugins: [],
-  important: true, // This forces Tailwind to use !important on all utilities
 };

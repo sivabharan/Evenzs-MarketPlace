@@ -2,21 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Force color palette application */
+/* Mobile-specific optimizations */
 @layer base {
   html {
     /* Prevent zoom on input focus on iOS */
     -webkit-text-size-adjust: 100%;
     /* Smooth scrolling */
     scroll-behavior: smooth;
-    /* Ensure background color is applied */
-    background-color: #FAFAF9 !important; /* background color */
   }
 
   body {
-    /* Force background color */
-    background-color: #FAFAF9 !important; /* background color */
-    color: #2D2D2D !important; /* charcoal text */
     /* Prevent horizontal scroll */
     overflow-x: hidden;
     /* Optimize for mobile performance */
@@ -25,13 +20,6 @@
     /* Support for safe areas on mobile devices */
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
-  }
-
-  /* Force root element colors */
-  #root {
-    background-color: #FAFAF9 !important; /* background color */
-    min-height: 100vh;
-    color: #2D2D2D !important; /* charcoal text */
   }
 
   /* Prevent zoom on form inputs on iOS */
@@ -79,24 +67,6 @@
   [role="button"] {
     -webkit-tap-highlight-color: rgba(212, 175, 55, 0.2);
   }
-
-  /* Force text colors */
-  h1, h2, h3, h4, h5, h6 {
-    color: #1A1A1A !important; /* secondary color */
-  }
-
-  p {
-    color: #2D2D2D !important; /* charcoal color */
-  }
-
-  /* Force link colors */
-  a {
-    color: #2D2D2D;
-  }
-
-  a:hover {
-    color: #D4AF37; /* primary color */
-  }
 }
 
 @layer utilities {
@@ -138,71 +108,6 @@
     contain: layout style paint;
   }
 
-  /* Force background color utility */
-  .bg-background {
-    background-color: #FAFAF9 !important;
-  }
-
-  /* Force white background */
-  .bg-white {
-    background-color: #ffffff !important;
-  }
-
-  /* Force text color utilities */
-  .text-secondary {
-    color: #1A1A1A !important;
-  }
-
-  .text-charcoal {
-    color: #2D2D2D !important;
-  }
-
-  .text-primary {
-    color: #D4AF37 !important;
-  }
-
-  .text-accent {
-    color: #F7D794 !important;
-  }
-
-  .text-white {
-    color: #ffffff !important;
-  }
-
-  /* Force background utilities */
-  .bg-primary {
-    background-color: #D4AF37 !important;
-  }
-
-  .bg-secondary {
-    background-color: #1A1A1A !important;
-  }
-
-  .bg-accent {
-    background-color: #F7D794 !important;
-  }
-
-  .bg-charcoal {
-    background-color: #2D2D2D !important;
-  }
-
-  .bg-platinum {
-    background-color: #E5E4E2 !important;
-  }
-
-  .bg-pearl {
-    background-color: #F8F6F0 !important;
-  }
-
-  /* Border utilities */
-  .border-platinum {
-    border-color: #E5E4E2 !important;
-  }
-
-  .border-primary {
-    border-color: #D4AF37 !important;
-  }
-
   /* Mobile-optimized animations */
   @media (prefers-reduced-motion: reduce) {
     .animate-gold-glow,
@@ -220,30 +125,30 @@
   /* High contrast mode support */
   @media (prefers-contrast: high) {
     .bg-primary {
-      background-color: #000000 !important;
+      background-color: #000000;
     }
     
     .text-primary {
-      color: #000000 !important;
+      color: #000000;
     }
     
     .border-primary {
-      border-color: #000000 !important;
+      border-color: #000000;
     }
   }
 
   /* Dark mode support for system preference */
   @media (prefers-color-scheme: dark) {
     .bg-background {
-      background-color: #1a1a1a !important;
+      background-color: #1a1a1a;
     }
     
     .text-secondary {
-      color: #ffffff !important;
+      color: #ffffff;
     }
     
     .text-charcoal {
-      color: #e5e5e5 !important;
+      color: #e5e5e5;
     }
   }
 }
