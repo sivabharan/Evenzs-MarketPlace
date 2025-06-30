@@ -523,32 +523,32 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto animate-mobile-safe">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-platinum">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-platinum">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center animate-gold-glow">
-              <Bot className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center animate-gold-glow">
+              <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-secondary flex items-center">
+              <h2 className="text-lg sm:text-xl font-bold text-secondary flex items-center">
                 AI Assistant
-                <Zap className="w-4 h-4 ml-2 text-primary" />
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4 ml-2 text-primary" />
               </h2>
-              <p className="text-sm text-charcoal">Powered by intelligent recommendations</p>
+              <p className="text-xs sm:text-sm text-charcoal">Powered by intelligent recommendations</p>
             </div>
           </div>
           <button
             onClick={onClose}
             className="p-2 text-charcoal hover:text-primary transition-colors"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 
         {/* Progress */}
-        <div className="px-6 py-4 bg-pearl">
-          <div className="flex items-center justify-between text-sm text-charcoal mb-2">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-pearl">
+          <div className="flex items-center justify-between text-xs sm:text-sm text-charcoal mb-2">
             <span>Question {getQuestionNumber()}</span>
             <span>{Math.round((getQuestionNumber() / 5) * 100)}% Complete</span>
           </div>
@@ -561,14 +561,14 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         </div>
 
         {/* Question */}
-        <div className="p-6">
-          <div className="mb-6">
+        <div className="p-4 sm:p-6">
+          <div className="mb-4 sm:mb-6">
             {aiThinking ? (
-              <div className="flex items-center space-x-3 p-4 bg-primary/5 rounded-xl">
-                <Brain className="w-6 h-6 text-primary animate-pulse" />
+              <div className="flex items-center space-x-3 p-3 sm:p-4 bg-primary/5 rounded-xl">
+                <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-primary animate-pulse" />
                 <div>
-                  <div className="font-medium text-secondary">AI is analyzing your responses...</div>
-                  <div className="text-sm text-charcoal">{currentQuestion.aiAnalysis}</div>
+                  <div className="font-medium text-secondary text-sm sm:text-base">AI is analyzing your responses...</div>
+                  <div className="text-xs sm:text-sm text-charcoal">{currentQuestion.aiAnalysis}</div>
                 </div>
               </div>
             ) : isTyping ? (
@@ -578,10 +578,10 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                   <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                   <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 </div>
-                <span className="text-charcoal">AI is preparing your next question...</span>
+                <span className="text-charcoal text-sm sm:text-base">AI is preparing your next question...</span>
               </div>
             ) : (
-              <h3 className="text-lg font-semibold text-secondary mb-2 leading-relaxed">
+              <h3 className="text-base sm:text-lg font-semibold text-secondary mb-2 leading-relaxed">
                 {currentQuestion.question}
               </h3>
             )}
@@ -593,23 +593,23 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(currentQuestion.id, option.value)}
-                  className="w-full text-left p-4 border border-platinum rounded-xl hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
+                  className="w-full text-left p-3 sm:p-4 border border-platinum rounded-xl hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
                 >
                   <div className="flex items-start space-x-3">
                     {option.icon && (
-                      <span className="text-2xl">{option.icon}</span>
+                      <span className="text-xl sm:text-2xl">{option.icon}</span>
                     )}
-                    <div className="flex-1">
-                      <div className="font-medium text-secondary group-hover:text-primary transition-colors">
+                    <div className="flex-1 min-w-0">
+                      <div className="font-medium text-secondary group-hover:text-primary transition-colors text-sm sm:text-base">
                         {option.label}
                       </div>
                       {option.description && (
-                        <div className="text-sm text-charcoal mt-1">
+                        <div className="text-xs sm:text-sm text-charcoal mt-1">
                           {option.description}
                         </div>
                       )}
                     </div>
-                    <ArrowRight className="w-5 h-5 text-charcoal group-hover:text-primary transition-colors" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-charcoal group-hover:text-primary transition-colors flex-shrink-0" />
                   </div>
                 </button>
               ))}
@@ -632,12 +632,12 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                           setUserProfile({ ...userProfile, [currentQuestion.id]: newValues });
                         }}
                       />
-                      <span className="ml-3 text-secondary">{option.label}</span>
+                      <span className="ml-3 text-secondary text-sm sm:text-base">{option.label}</span>
                     </label>
                   ))}
                   <button
                     onClick={() => handleAnswer(currentQuestion.id, userProfile[currentQuestion.id as keyof UserProfile] || [])}
-                    className="w-full mt-4 bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow"
+                    className="w-full mt-4 bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow text-sm sm:text-base"
                     disabled={!userProfile[currentQuestion.id as keyof UserProfile] || (userProfile[currentQuestion.id as keyof UserProfile] as string[])?.length === 0}
                   >
                     Continue
@@ -649,7 +649,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                 <div className="space-y-4">
                   <textarea
                     placeholder={currentQuestion.placeholder}
-                    className="w-full p-4 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full p-3 sm:p-4 border border-platinum rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none text-sm sm:text-base"
                     rows={3}
                     onChange={(e) => {
                       const value = e.target.value;
@@ -663,7 +663,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
                   />
                   <button
                     onClick={() => handleAnswer(currentQuestion.id, userProfile[currentQuestion.id as keyof UserProfile] || '')}
-                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow"
+                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow text-sm sm:text-base"
                   >
                     Continue
                   </button>
@@ -674,9 +674,9 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 bg-pearl border-t border-platinum">
-          <div className="flex items-center justify-center text-sm text-charcoal">
-            <Brain className="w-4 h-4 mr-2" />
+        <div className="px-4 sm:px-6 py-3 sm:py-4 bg-pearl border-t border-platinum">
+          <div className="flex items-center justify-center text-xs sm:text-sm text-charcoal">
+            <Brain className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             AI is learning your preferences to create personalized recommendations
           </div>
         </div>
