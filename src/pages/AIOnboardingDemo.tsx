@@ -254,9 +254,7 @@ export const AIOnboardingDemo: React.FC = () => {
           <div className="text-center">
             <button
               onClick={handleStartOnboarding}
-              type="button"
-              className="bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow flex items-center mx-auto cursor-pointer"
-              style={{ cursor: 'pointer' }}
+              className="bg-gradient-to-r from-primary to-accent hover:from-gold-dark hover:to-gold-elegant text-secondary px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg animate-gold-glow flex items-center mx-auto"
             >
               <Bot className="w-6 h-6 mr-2" />
               Experience AI Onboarding
