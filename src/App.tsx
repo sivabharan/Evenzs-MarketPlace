@@ -23,7 +23,6 @@ import { Terms } from './pages/Terms';
 import { Support } from './pages/Support';
 import { OnboardingDemo } from './pages/OnboardingDemo';
 import { AIOnboardingDemo } from './pages/AIOnboardingDemo';
-import { PPTTemplate } from './pages/PPTTemplate';
 
 function App() {
   return (
@@ -52,7 +51,6 @@ function App() {
             <Route path="/support" element={<Support />} />
             <Route path="/onboarding-demo" element={<OnboardingDemo />} />
             <Route path="/ai-onboarding-demo" element={<AIOnboardingDemo />} />
-            <Route path="/ppt-template" element={<PPTTemplate />} />
           </Routes>
         </Layout>
       </Router>

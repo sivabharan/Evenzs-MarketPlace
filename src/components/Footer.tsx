@@ -105,11 +105,6 @@ export const Footer: React.FC = () => {
                   Event Packages
                 </Link>
               </li>
-              <li>
-                <Link to="/ppt-template" className="hover:text-primary transition-colors">
-                  PowerPoint Template
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
