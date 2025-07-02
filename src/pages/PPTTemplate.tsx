@@ -44,17 +44,83 @@ export const PPTTemplate: React.FC = () => {
         white: 'FFFFFF'
       };
 
-      // Slide 1: Title Slide
+      // Create Evenzs logo as text (since we can't embed SVG directly)
+      const addEvenzLogo = (slide: any, x: number, y: number, size: number = 24) => {
+        // Add "Even" in dark color
+        slide.addText('Even', {
+          x: x, y: y, w: 1.2, h: 0.5,
+          fontSize: size, bold: true, color: colors.dark,
+          fontFace: 'Arial', align: 'left'
+        });
+        
+        // Add "z" in coral pink
+        slide.addText('z', {
+          x: x + 1.2, y: y, w: 0.3, h: 0.5,
+          fontSize: size, bold: true, color: colors.primary,
+          fontFace: 'Arial', align: 'left'
+        });
+        
+        // Add "s" in dark color
+        slide.addText('s', {
+          x: x + 1.5, y: y, w: 0.3, h: 0.5,
+          fontSize: size, bold: true, color: colors.dark,
+          fontFace: 'Arial', align: 'left'
+        });
+        
+        // Add tagline
+        slide.addText('Events Made Effortless', {
+          x: x, y: y + 0.4, w: 3, h: 0.3,
+          fontSize: 10, color: colors.dark,
+          fontFace: 'Arial', align: 'left'
+        });
+      };
+
+      // Add copyright footer to slides
+      const addCopyright = (slide: any) => {
+        slide.addText('© 2025 Evenzs. All rights reserved. | evenzs.com', {
+          x: 0.5, y: 7, w: 9, h: 0.3,
+          fontSize: 8, color: colors.dark,
+          fontFace: 'Arial', align: 'center'
+        });
+      };
+
+      // Slide 1: Title Slide with Logo
       const slide1 = pres.addSlide();
       slide1.background = { fill: `${colors.primary}` };
       
-      slide1.addText('EVENZS', {
-        x: 1, y: 2, w: 8, h: 1.5,
-        fontSize: 48, bold: true, color: colors.white,
-        align: 'center', fontFace: 'Arial'
+      // Add champagne glass icon representation
+      slide1.addShape(pres.ShapeType.rect, {
+        x: 4.2, y: 1, w: 1.6, h: 1.2,
+        fill: { color: colors.white },
+        line: { color: colors.white, width: 2 }
       });
       
-      slide1.addText('Event Planning Made Effortless', {
+      slide1.addText('🥂', {
+        x: 4.2, y: 1, w: 1.6, h: 1.2,
+        fontSize: 48, color: colors.secondary,
+        align: 'center', valign: 'middle', fontFace: 'Arial'
+      });
+      
+      // Main title with proper logo styling
+      slide1.addText('Even', {
+        x: 2.5, y: 2.5, w: 1.5, h: 1,
+        fontSize: 48, bold: true, color: colors.white,
+        align: 'left', fontFace: 'Arial'
+      });
+      
+      slide1.addText('z', {
+        x: 4, y: 2.5, w: 0.5, h: 1,
+        fontSize: 48, bold: true, color: colors.secondary,
+        align: 'left', fontFace: 'Arial'
+      });
+      
+      slide1.addText('s', {
+        x: 4.5, y: 2.5, w: 0.5, h: 1,
+        fontSize: 48, bold: true, color: colors.white,
+        align: 'left', fontFace: 'Arial'
+      });
+      
+      slide1.addText('Events Made Effortless', {
         x: 1, y: 3.5, w: 8, h: 0.8,
         fontSize: 24, color: colors.white,
         align: 'center', fontFace: 'Arial'
@@ -66,12 +132,22 @@ export const PPTTemplate: React.FC = () => {
         align: 'center', fontFace: 'Arial', italic: true
       });
 
-      // Slide 2: Agenda
+      // Copyright on title slide
+      slide1.addText('© 2025 Evenzs. All rights reserved.', {
+        x: 1, y: 6.5, w: 8, h: 0.3,
+        fontSize: 10, color: colors.white,
+        align: 'center', fontFace: 'Arial'
+      });
+
+      // Slide 2: Agenda with Logo
       const slide2 = pres.addSlide();
       slide2.background = { fill: colors.white };
       
+      // Add logo to header
+      addEvenzLogo(slide2, 0.5, 0.2, 16);
+      
       slide2.addText('AGENDA', {
-        x: 1, y: 0.5, w: 8, h: 1,
+        x: 1, y: 1, w: 8, h: 1,
         fontSize: 36, bold: true, color: colors.dark,
         align: 'center', fontFace: 'Arial'
       });
@@ -87,24 +163,28 @@ export const PPTTemplate: React.FC = () => {
       
       agendaItems.forEach((item, index) => {
         slide2.addText(item, {
-          x: 1.5, y: 2 + (index * 0.7), w: 7, h: 0.6,
+          x: 1.5, y: 2.5 + (index * 0.7), w: 7, h: 0.6,
           fontSize: 18, color: colors.dark,
           fontFace: 'Arial'
         });
       });
 
-      // Slide 3: Event Overview
+      addCopyright(slide2);
+
+      // Slide 3: Event Overview with Logo
       const slide3 = pres.addSlide();
       slide3.background = { fill: colors.light };
       
+      addEvenzLogo(slide3, 0.5, 0.2, 16);
+      
       slide3.addText('EVENT OVERVIEW', {
-        x: 1, y: 0.5, w: 8, h: 1,
+        x: 1, y: 1, w: 8, h: 1,
         fontSize: 32, bold: true, color: colors.dark,
         align: 'center', fontFace: 'Arial'
       });
       
       slide3.addText('Event Details', {
-        x: 1, y: 2, w: 4, h: 0.8,
+        x: 1, y: 2.5, w: 4, h: 0.8,
         fontSize: 20, bold: true, color: colors.primary,
         fontFace: 'Arial'
       });
@@ -119,28 +199,54 @@ export const PPTTemplate: React.FC = () => {
       
       eventDetails.forEach((detail, index) => {
         slide3.addText(detail, {
-          x: 1, y: 2.8 + (index * 0.5), w: 4, h: 0.4,
+          x: 1, y: 3.3 + (index * 0.5), w: 4, h: 0.4,
           fontSize: 14, color: colors.dark,
           fontFace: 'Arial'
         });
       });
 
-      // Slide 4: Team Introduction
+      // Add event planning benefits
+      slide3.addText('Why Choose Evenzs?', {
+        x: 5.5, y: 2.5, w: 3, h: 0.8,
+        fontSize: 20, bold: true, color: colors.secondary,
+        fontFace: 'Arial'
+      });
+      
+      const benefits = [
+        '✓ Verified Vendors',
+        '✓ Seamless Planning',
+        '✓ 24/7 Support',
+        '✓ Best Price Guarantee'
+      ];
+      
+      benefits.forEach((benefit, index) => {
+        slide3.addText(benefit, {
+          x: 5.5, y: 3.3 + (index * 0.5), w: 3, h: 0.4,
+          fontSize: 14, color: colors.dark,
+          fontFace: 'Arial'
+        });
+      });
+
+      addCopyright(slide3);
+
+      // Slide 4: Team Introduction with Logo
       const slide4 = pres.addSlide();
       slide4.background = { fill: colors.white };
       
+      addEvenzLogo(slide4, 0.5, 0.2, 16);
+      
       slide4.addText('OUR TEAM', {
-        x: 1, y: 0.5, w: 8, h: 1,
+        x: 1, y: 1, w: 8, h: 1,
         fontSize: 32, bold: true, color: colors.dark,
         align: 'center', fontFace: 'Arial'
       });
       
       // Team member placeholders
       const teamPositions = [
-        { x: 1, y: 2, title: 'Event Manager', name: '[Name]' },
-        { x: 5, y: 2, title: 'Coordinator', name: '[Name]' },
-        { x: 1, y: 4.5, title: 'Vendor Relations', name: '[Name]' },
-        { x: 5, y: 4.5, title: 'Marketing Lead', name: '[Name]' }
+        { x: 1, y: 2.5, title: 'Event Manager', name: '[Name]' },
+        { x: 5, y: 2.5, title: 'Coordinator', name: '[Name]' },
+        { x: 1, y: 5, title: 'Vendor Relations', name: '[Name]' },
+        { x: 5, y: 5, title: 'Marketing Lead', name: '[Name]' }
       ];
       
       teamPositions.forEach(member => {
@@ -170,12 +276,16 @@ export const PPTTemplate: React.FC = () => {
         });
       });
 
-      // Slide 5: Timeline
+      addCopyright(slide4);
+
+      // Slide 5: Timeline with Logo
       const slide5 = pres.addSlide();
       slide5.background = { fill: colors.white };
       
+      addEvenzLogo(slide5, 0.5, 0.2, 16);
+      
       slide5.addText('EVENT TIMELINE', {
-        x: 1, y: 0.5, w: 8, h: 1,
+        x: 1, y: 1, w: 8, h: 1,
         fontSize: 32, bold: true, color: colors.dark,
         align: 'center', fontFace: 'Arial'
       });
@@ -190,7 +300,7 @@ export const PPTTemplate: React.FC = () => {
       ];
       
       timelineItems.forEach((item, index) => {
-        const yPos = 2 + (index * 0.7);
+        const yPos = 2.5 + (index * 0.7);
         
         slide5.addShape(pres.ShapeType.rect, {
           x: 1, y: yPos, w: 1.5, h: 0.5,
@@ -210,35 +320,49 @@ export const PPTTemplate: React.FC = () => {
         });
       });
 
-      // Slide 6: Budget Overview
+      addCopyright(slide5);
+
+      // Slide 6: Budget Overview with Logo
       const slide6 = pres.addSlide();
       slide6.background = { fill: colors.light };
       
+      addEvenzLogo(slide6, 0.5, 0.2, 16);
+      
       slide6.addText('BUDGET OVERVIEW', {
-        x: 1, y: 0.5, w: 8, h: 1,
+        x: 1, y: 1, w: 8, h: 1,
         fontSize: 32, bold: true, color: colors.dark,
         align: 'center', fontFace: 'Arial'
       });
       
       // Budget chart placeholder
       slide6.addShape(pres.ShapeType.rect, {
-        x: 1.5, y: 2, w: 7, h: 4,
+        x: 1.5, y: 2.5, w: 7, h: 3.5,
         fill: { color: colors.white },
         line: { color: colors.primary, width: 2 }
       });
       
       slide6.addText('[Budget Chart/Graph]', {
-        x: 1.5, y: 3.8, w: 7, h: 0.4,
+        x: 1.5, y: 4, w: 7, h: 0.4,
         fontSize: 16, color: colors.dark,
         align: 'center', fontFace: 'Arial', italic: true
       });
 
-      // Slide 7: Vendor Partners
+      slide6.addText('Powered by Evenzs Platform', {
+        x: 1.5, y: 4.5, w: 7, h: 0.4,
+        fontSize: 12, color: colors.primary,
+        align: 'center', fontFace: 'Arial'
+      });
+
+      addCopyright(slide6);
+
+      // Slide 7: Vendor Partners with Logo
       const slide7 = pres.addSlide();
       slide7.background = { fill: colors.white };
       
+      addEvenzLogo(slide7, 0.5, 0.2, 16);
+      
       slide7.addText('VENDOR PARTNERS', {
-        x: 1, y: 0.5, w: 8, h: 1,
+        x: 1, y: 1, w: 8, h: 1,
         fontSize: 32, bold: true, color: colors.dark,
         align: 'center', fontFace: 'Arial'
       });
@@ -256,7 +380,7 @@ export const PPTTemplate: React.FC = () => {
         const row = Math.floor(index / 2);
         const col = index % 2;
         const x = 1 + (col * 4);
-        const y = 2 + (row * 1.2);
+        const y = 2.5 + (row * 1.2);
         
         slide7.addShape(pres.ShapeType.rect, {
           x: x, y: y, w: 3.5, h: 0.8,
@@ -271,26 +395,54 @@ export const PPTTemplate: React.FC = () => {
         });
       });
 
-      // Slide 8: Contact Information
+      addCopyright(slide7);
+
+      // Slide 8: Contact Information with Logo
       const slide8 = pres.addSlide();
       slide8.background = { fill: `${colors.dark}` };
       
+      // Logo in white for dark background
+      slide8.addText('Even', {
+        x: 3.5, y: 1, w: 1.2, h: 0.5,
+        fontSize: 24, bold: true, color: colors.white,
+        fontFace: 'Arial', align: 'left'
+      });
+      
+      slide8.addText('z', {
+        x: 4.7, y: 1, w: 0.3, h: 0.5,
+        fontSize: 24, bold: true, color: colors.secondary,
+        fontFace: 'Arial', align: 'left'
+      });
+      
+      slide8.addText('s', {
+        x: 5, y: 1, w: 0.3, h: 0.5,
+        fontSize: 24, bold: true, color: colors.white,
+        fontFace: 'Arial', align: 'left'
+      });
+      
       slide8.addText('THANK YOU', {
-        x: 1, y: 2, w: 8, h: 1.5,
+        x: 1, y: 2.5, w: 8, h: 1.5,
         fontSize: 42, bold: true, color: colors.white,
         align: 'center', fontFace: 'Arial'
       });
       
       slide8.addText('Questions?', {
-        x: 1, y: 3.8, w: 8, h: 0.8,
+        x: 1, y: 4.3, w: 8, h: 0.8,
         fontSize: 24, color: colors.secondary,
         align: 'center', fontFace: 'Arial'
       });
       
       slide8.addText('Contact: [Your Email]\nPhone: [Your Phone]\nWebsite: evenzs.com', {
-        x: 1, y: 5, w: 8, h: 1.5,
+        x: 1, y: 5.5, w: 8, h: 1.5,
         fontSize: 16, color: colors.white,
         align: 'center', fontFace: 'Arial'
+      });
+
+      // Copyright in white for dark background
+      slide8.addText('© 2025 Evenzs. All rights reserved. | evenzs.com', {
+        x: 0.5, y: 7, w: 9, h: 0.3,
+        fontSize: 8, color: colors.white,
+        fontFace: 'Arial', align: 'center'
       });
 
       // Generate and download the presentation
@@ -318,8 +470,8 @@ export const PPTTemplate: React.FC = () => {
     },
     {
       icon: Image,
-      title: 'Image Placeholders',
-      description: 'Pre-designed spaces for your event photos and team pictures'
+      title: 'Evenzs Logo',
+      description: 'Consistent branding with Evenzs logo on every slide'
     },
     {
       icon: BarChart3,
@@ -341,42 +493,42 @@ export const PPTTemplate: React.FC = () => {
   const slideLayouts = [
     {
       title: 'Title Slide',
-      description: 'Evenzs branding with event name placeholder',
+      description: 'Evenzs logo with champagne glass icon and event name placeholder',
       preview: 'bg-gradient-to-br from-primary to-accent'
     },
     {
       title: 'Agenda',
-      description: 'Professional agenda layout with numbered items',
+      description: 'Professional agenda layout with Evenzs branding',
       preview: 'bg-white border-2 border-primary'
     },
     {
       title: 'Event Overview',
-      description: 'Event details and key information',
+      description: 'Event details with Evenzs benefits and branding',
       preview: 'bg-gradient-to-r from-accent/20 to-primary/20'
     },
     {
       title: 'Team Introduction',
-      description: 'Team member profiles with photo placeholders',
+      description: 'Team member profiles with photo placeholders and logo',
       preview: 'bg-neutral border border-gray-200'
     },
     {
       title: 'Timeline',
-      description: 'Event schedule with time blocks',
+      description: 'Event schedule with time blocks and Evenzs branding',
       preview: 'bg-gradient-to-br from-mango/30 to-coral/30'
     },
     {
       title: 'Budget Overview',
-      description: 'Financial planning and chart placeholder',
+      description: 'Financial planning with Evenzs platform integration',
       preview: 'bg-neutral border border-gray-200'
     },
     {
       title: 'Vendor Partners',
-      description: 'Vendor categories and partnerships',
+      description: 'Vendor categories with Evenzs brand colors',
       preview: 'bg-white border-2 border-secondary'
     },
     {
       title: 'Thank You',
-      description: 'Closing slide with contact information',
+      description: 'Closing slide with Evenzs logo and contact information',
       preview: 'bg-gradient-to-br from-secondary to-midnight'
     }
   ];
@@ -497,6 +649,60 @@ export const PPTTemplate: React.FC = () => {
           </div>
         </div>
 
+        {/* Logo & Branding Section */}
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Evenzs Branding</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Logo Usage</h3>
+              <div className="bg-gray-50 rounded-xl p-6 mb-4">
+                <div className="flex items-center mb-2">
+                  <span className="text-2xl font-bold text-gray-900">Even</span>
+                  <span className="text-2xl font-bold text-[#FF4F6A]">z</span>
+                  <span className="text-2xl font-bold text-gray-900">s</span>
+                </div>
+                <p className="text-sm text-gray-600">Events Made Effortless</p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-700">Consistent logo placement on all slides</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-700">Champagne glass icon representation</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-700">Proper color contrast for readability</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Copyright Information</h3>
+              <div className="bg-gray-50 rounded-xl p-6 mb-4">
+                <p className="text-sm text-gray-700 text-center">
+                  © 2025 Evenzs. All rights reserved. | evenzs.com
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-700">Copyright notice on every slide</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-700">Website reference included</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-700">Professional legal compliance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Color Palette */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Brand Color Palette</h2>
@@ -537,15 +743,15 @@ export const PPTTemplate: React.FC = () => {
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Evenzs brand colors and styling</span>
+                  <span className="text-gray-700">Evenzs logo on every slide</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Editable text placeholders</span>
+                  <span className="text-gray-700">Copyright notices included</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span className="text-gray-700">Professional layouts and graphics</span>
+                  <span className="text-gray-700">Brand colors and styling</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
@@ -586,7 +792,7 @@ export const PPTTemplate: React.FC = () => {
           <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to Create Professional Presentations?</h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Download our PowerPoint template and start creating beautiful presentations that match the Evenzs brand. 
+              Download our PowerPoint template with Evenzs branding, logo, and copyright information. 
               The template includes 8 professional slides ready for your content.
             </p>
             <button
