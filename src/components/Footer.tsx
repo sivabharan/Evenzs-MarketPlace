@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
+import { Instagram, Twitter, Facebook, Mail, Download } from 'lucide-react';
 import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
@@ -134,6 +134,10 @@ export const Footer: React.FC = () => {
             </Link>
             <Link to="/support" className="text-gray-300 hover:text-primary transition-colors">
               Support
+            </Link>
+            <Link to="/logo-download" className="text-gray-300 hover:text-primary transition-colors flex items-center">
+              <Download className="w-4 h-4 mr-1" />
+              Logo Download
             </Link>
           </div>
         </div>
