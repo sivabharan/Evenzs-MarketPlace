@@ -261,7 +261,9 @@ export const VendorDashboard: React.FC = () => {
                   <div className="p-2 bg-gold/10 rounded-lg group-hover:bg-gold/20 transition-colors">
                     <Calendar className="w-5 h-5 text-gold-dark" />
                   </div>
-                  <span className="ml-3 font-medium text-gray-900 group-hover:text-gold-dark">Manage Calendar</span>
+                  <span className="ml-3 font-medium text-gray-900 group-hover:text-gold-dark">
+                    <Link to="/vendor-calendar">Manage Calendar</Link>
+                  </span>
                 </button>
               </div>
             </div>

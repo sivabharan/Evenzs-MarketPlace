@@ -151,12 +151,15 @@ export const OrganizerDashboard: React.FC = () => {
                           Budget: <span className="font-medium">${event.budget.toLocaleString()}</span>
                         </span>
                         <span className="text-sm text-gray-600">
-                          Vendors: <span className="font-medium">{event.vendors}</span>
+                          Guests: <span className="font-medium">{event.vendors}</span>
                         </span>
                       </div>
-                      <button className="text-primary hover:text-purple-dark font-medium">
+                      <Link
+                        to={`/event-management/${event.id}`}
+                        className="text-primary hover:text-purple-dark font-medium"
+                      >
                         Manage →
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 ))}

@@ -24,6 +24,8 @@ import { Support } from './pages/Support';
 import { OnboardingDemo } from './pages/OnboardingDemo';
 import { AIOnboardingDemo } from './pages/AIOnboardingDemo';
 import { LogoDownload } from './pages/LogoDownload';
+import { EventManagement } from './pages/EventManagement';
+import { VendorCalendarPage } from './pages/VendorCalendarPage';
 
 function App() {
   return (
@@ -53,6 +55,8 @@ function App() {
             <Route path="/onboarding-demo" element={<OnboardingDemo />} />
             <Route path="/ai-onboarding-demo" element={<AIOnboardingDemo />} />
             <Route path="/logo-download" element={<LogoDownload />} />
+            <Route path="/event-management/:eventId" element={<EventManagement />} />
+            <Route path="/vendor-calendar" element={<VendorCalendarPage />} />
           </Routes>
         </Layout>
       </Router>
