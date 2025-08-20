@@ -200,7 +200,7 @@ export const Home: React.FC = () => {
           </div>
           <div className="mt-6 sm:mt-8">
             <Link 
-              to="/signin"
+              to="/register"
               state={{ role: 'vendor' }}
               className="inline-flex items-center justify-center text-gray-700 hover:text-primary px-4 sm:px-6 py-2 rounded-full font-medium transition-colors"
             >

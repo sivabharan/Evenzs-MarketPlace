@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { SignIn } from './pages/SignIn';
+import { Register } from './pages/Register';
 import { OrganizerDashboard } from './pages/OrganizerDashboard';
 import { VendorDashboard } from './pages/VendorDashboard';
 import { CreateEvent } from './pages/CreateEvent';
@@ -35,6 +36,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/organizer-dashboard" element={<OrganizerDashboard />} />
             <Route path="/vendor-dashboard" element={<VendorDashboard />} />
             <Route path="/create-event" element={<CreateEvent />} />

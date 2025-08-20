@@ -103,7 +103,7 @@ export const Header: React.FC = () => {
                     className="flex items-center space-x-1 sm:space-x-2 bg-sunset-gradient hover:shadow-coral-glow text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all duration-300 hover:scale-105 shadow-lg animate-coral-glow text-sm sm:text-base"
                   >
                     <User size={16} />
-                    <span className="font-medium">Sign In</span>
+                    <span className="font-medium">Join Now</span>
                   </Link>
                 </div>
               ) : (

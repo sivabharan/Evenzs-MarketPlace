@@ -1,14 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  role: 'organizer' | 'vendor' | 'customer';
-  avatar?: string;
-  provider?: 'email' | 'google' | 'facebook';
-  verified?: boolean;
-}
+import { User } from '../types/user';
+import { userApi } from '../services/userApi';
 
 interface AuthContextType {
   user: User | null;
@@ -16,6 +8,7 @@ interface AuthContextType {
   signIn: (email: string, password: string, role: 'organizer' | 'vendor' | 'customer') => Promise<void>;
   signInWithGoogle: (role: 'organizer' | 'vendor' | 'customer') => Promise<void>;
   signInWithFacebook: (role: 'organizer' | 'vendor' | 'customer') => Promise<void>;
+  setUser: (user: User | null) => void;
   signOut: () => void;
   loading: boolean;
 }
@@ -141,36 +134,39 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signIn = async (email: string, password: string, role: 'organizer' | 'vendor' | 'customer') => {
     setLoading(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const mockUser = mockUsers.email[role];
-    setUser(mockUser);
-    localStorage.setItem('evenzs_user', JSON.stringify(mockUser));
+    try {
+      const user = await userApi.loginUser(email, password);
+      setUser(user);
+      localStorage.setItem('evenzs_user', JSON.stringify(user));
+    } catch (error) {
+      throw error;
+    }
     setLoading(false);
   };
 
   const signInWithGoogle = async (role: 'organizer' | 'vendor' | 'customer') => {
     setLoading(true);
     
-    // Simulate Google OAuth flow
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    const mockUser = mockUsers.google[role];
-    setUser(mockUser);
-    localStorage.setItem('evenzs_user', JSON.stringify(mockUser));
+    try {
+      const user = await userApi.socialLogin('google', role);
+      setUser(user);
+      localStorage.setItem('evenzs_user', JSON.stringify(user));
+    } catch (error) {
+      throw error;
+    }
     setLoading(false);
   };
 
   const signInWithFacebook = async (role: 'organizer' | 'vendor' | 'customer') => {
     setLoading(true);
     
-    // Simulate Facebook OAuth flow
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    const mockUser = mockUsers.facebook[role];
-    setUser(mockUser);
-    localStorage.setItem('evenzs_user', JSON.stringify(mockUser));
+    try {
+      const user = await userApi.socialLogin('facebook', role);
+      setUser(user);
+      localStorage.setItem('evenzs_user', JSON.stringify(user));
+    } catch (error) {
+      throw error;
+    }
     setLoading(false);
   };
 
@@ -185,6 +181,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     signIn,
     signInWithGoogle,
     signInWithFacebook,
+    setUser,
     signOut,
     loading
   };

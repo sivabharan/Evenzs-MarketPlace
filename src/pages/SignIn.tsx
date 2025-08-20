@@ -358,8 +358,12 @@ export const SignIn: React.FC = () => {
               className="text-primary hover:text-coral-dark font-medium transition-colors"
             >
               {isSignUp 
-                ? 'Already have an account? Sign in' 
-                : "Don't have an account? Sign up"
+                ? 'Already have an account? Sign in'
+                : (
+                  <Link to="/register" className="text-primary hover:text-coral-dark font-medium transition-colors">
+                    Don't have an account? Sign up
+                  </Link>
+                )
               }
             </button>
           </div>

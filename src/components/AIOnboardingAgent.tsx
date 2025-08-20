@@ -358,6 +358,7 @@ export const AIOnboardingAgent: React.FC<AIOnboardingAgentProps> = ({ onComplete
       setAiThinking(true);
       setTimeout(() => {
         const finalProfile = generateAIProfile(updatedProfile);
+        console.log('🤖 AI Onboarding Complete - Final Profile:', finalProfile);
         onComplete(finalProfile);
       }, 2000);
     } else {
