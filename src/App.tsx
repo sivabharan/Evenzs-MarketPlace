@@ -56,7 +56,6 @@ function App() {
             <Route path="/support" element={<Support />} />
             <Route path="/onboarding-demo" element={<OnboardingDemo />} />
             <Route path="/ai-onboarding-demo" element={<AIOnboardingDemo />} />
-            <Route path="/logo-download" element={<LogoDownload />} />
             <Route path="/event-management/:eventId" element={<EventManagement />} />
             <Route path="/vendor-calendar" element={<VendorCalendarPage />} />
           </Routes>

@@ -112,18 +112,6 @@ export const Footer: React.FC = () => {
         <div className="border-t border-midnight mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
             <p className="text-gray-300">© 2025 evenzs. All rights reserved.</p>
-            <a 
-              href="https://bolt.new" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center"
-            >
-              <img 
-                src="https://bolt.new/badge.svg" 
-                alt="Built with Bolt.new" 
-                className="h-6 hover:opacity-80 transition-opacity"
-              />
-            </a>
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-gray-300 hover:text-primary transition-colors">
@@ -134,10 +122,6 @@ export const Footer: React.FC = () => {
             </Link>
             <Link to="/support" className="text-gray-300 hover:text-primary transition-colors">
               Support
-            </Link>
-            <Link to="/logo-download" className="text-gray-300 hover:text-primary transition-colors flex items-center">
-              <Download className="w-4 h-4 mr-1" />
-              Logo Download
             </Link>
           </div>
         </div>
